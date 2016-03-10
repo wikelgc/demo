@@ -1,12 +1,68 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: #4EBB89;
+}
+
+.title{
+    text-align: center;
+    margin: 50px;
+}
+h1{
+    font-size: 64px;
+}
+
+span{
+    font-size: 44px;
+}
+
+#content{
+    background-color: white;
+    /*border: 1px solid red;*/
+}
+
 .snake{
-    width:300px;
-    height: 500px;
+    width:600px;
+    height:600px;
+    margin: 0 auto;
+    margin-top:50px;
+    /*border:1px solid red;*/
 }
 
 .snake div{
-    width:8px;
-    height:8px;
-    border:1px solid white;
+    width:24px;
+    height:24px;
+    border:3px solid white;
+    /*margin: 2px;*/
     float: left;
     background: #ccc;
+}
+
+.snake .show{
+    background-color: black;
+}
+
+.snake .food{
+    background-color: red;
+    -webkit-animation: food 0.8s infinite;
+    -moz-animation:    food 0.8s infinite;
+    -ms-animation:     food 0.8s infinite;
+}
+
+@-webkit-keyframes food {
+    from{opacity: 1}
+    to{opacity: 0}
+}
+
+@-moz-keyframes food {
+    from{opacity: 1}
+    to{opacity: 0}
+}
+
+@-ms-keyframes food {
+    from{opacity: 1}
+    to{opacity: 0}
 }
