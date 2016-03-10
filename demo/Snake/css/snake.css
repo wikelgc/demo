@@ -1,0 +1,12 @@
+.snake{
+    width:300px;
+    height: 500px;
+}
+
+.snake div{
+    width:8px;
+    height:8px;
+    border:1px solid white;
+    float: left;
+    background: #ccc;
+}

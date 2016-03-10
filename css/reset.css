@@ -1,0 +1,70 @@
+@import url(http://thecodeplayer.com/uploads/fonts/fontawesome/css/font-awesome.min.css);
+
+
+
+/*Basic reset*/
+*{margin: 0;  padding: 0}
+
+body{
+    background: #4EBB89;
+}
+
+#accordian{
+    background: #004050;
+    width: 300px;
+    margin: 100px auto 0 auto;
+    color:white;
+    
+    /*Some cool shadow and glow effect*/
+    box-shadow: 
+        0 5px 15px 1px rgba(0,0,0,0.6),
+        0 0 200px 1px rgba(255,255,255,0.5);
+}
+
+/*heading styles*/
+#accordian h3{
+    font-size: 16px;
+    line-height: 34px;
+    padding: 5px 10px;
+    cursor:point;
+    background: linear-gradient(#003040,#002535);
+}
+
+/*list items*/
+#accordian li{
+    list-style-type: none;
+
+
+}
+
+/*links*/
+#accordian ul ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 11px;
+    line-height: 27px;
+    display: block;
+    padding: 0 15px;
+    transition: all 0.15s;
+}
+
+/*hover effect on links*/
+#accordian ul ul li a:hover{
+    background: #003545;
+    /*border-left: 5px solid lightgreen;*/
+}
+
+#accordian ul  li:hover{
+    background: #003545;
+    border-left: 5px solid lightgreen;
+}
+
+
+/*Lets hide the non active Lls by default*/
+#accordian ul ul{
+    display: none;
+}
+
+#accordian li.active ul{
+    display: block;
+}
