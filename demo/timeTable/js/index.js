@@ -33,10 +33,22 @@
         var that = this;
         for(var i=1;i<=6;i++){
             for(var j=1;j<=7;j++){
-                that.table.rows[i].cells[j].innerText=time.week[j-1].course[i-1].subject;
+                that.table.rows[i].cells[j].firstChild.innerHTML=time.week[j-1].course[i-1].subject;
+                //that.table.rows[i].cells[j].
+                if(time.week[j-1].course[i-1].subject!="") {
+                    that.table.rows[i].cells[j].setAttribute("class", "success");
+                }
+
+                //if(that.table.rows[i].cells[j].firstChild.hasAttributes(""))
             }
         }
 
     };
+
+    //table.prototype.time=function(){
+    //    var that = this;
+    //
+    //};
+
     window.Table=table;
 }));
