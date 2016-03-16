@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Virtual DOM</title>
+    <script src="lib/react.min.js"></script>
+    <style>
+        p{font:italic bold 50px verdana;}
+    </style>
+</head>
+<body>
+<div id="content"></div>
+<script>
+    //获取初始时间
+    var t0 = new Date().getTime();
+
+    //16ms定时器
+    setInterval(function(){
+        //获取当前时间，计算已运行时长
+        var  t = new Date().getTime(),
+                delta = t - t0;
+
+        //在虚拟DOM上创建元素
+        var el = React.createElement("p",null,delta);
+
+        //渲染到真实DOM
+        React.render(el,document.querySelector("#content"));
+    },16);
+</script>
+</body>
+</html>

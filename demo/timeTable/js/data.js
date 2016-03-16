@@ -4,7 +4,7 @@ var names = "数据挖掘233";
 var subject=[
     {   "subjectId":"000",
         "subjectName":"",
-        "address":""
+        "address":"多媒体(北)"
     },
     {   "subjectId":"001",
         "subjectName":"程序设计基础",
@@ -21,6 +21,12 @@ var subject=[
         "address":"多媒体(北)"
     }
 ];
+
+
+//var timer=[{
+//    "011":subject[0].subjectName;
+//    "0"
+//}]
 
 
 //

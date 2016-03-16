@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>LED Display</title>
+    <script src="lib/react.min.js"></script>
+    <!--组件样式-->
+    <style>
+        @font-face {
+            font-family:"LED";
+            src:url("font/LED.eot?") format("eot"),
+            url("font/LED.woff") format("woff"),
+            url("font/LED.ttf") format("truetype"),
+            url("font/LED.svg#LED") format("svg");
+            font-weight:normal;
+            font-style:normal;
+        }
+        .ez-led{
+            font-family : "LED";
+            font-size : 40px;
+            background : #70d355;
+            width: 300px;
+            height:60px;
+            line-height : 60px;
+            text-align : right;
+            padding : 10px;
+            letter-spacing:5px;
+        }
+    </style>
+</head>
+<body>
+<!--定义容器-->
+<div id="content"></div>
+<script>
+    //1.定义React组件
+    var EzLedComp = React.createClass({
+        //每个React组件都应该事先render()方法
+        render : function(){
+            var e = React.createElement(
+                    "div",  //指定要创建的元素类型
+                    {className : "ez-led"},//指定元素的附加属性，比如样式、CSS类
+                    "Hello, React!"//被认为是这个元素的子元素
+            );
+            //render()方法应该返回一个React元素
+            return e;
+        }
+    });
+
+    //2.在虚拟DOM创建元素，引入React组件
+    var el = React.createElement(EzLedComp);
+
+    //3.将虚拟DOM上的组建渲染到真实DOM上的#content容器上
+    React.render(el,document.querySelector("#content"));
+</script>
+</body>
+</html>

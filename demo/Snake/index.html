@@ -4,17 +4,30 @@
     <meta charset="UTF-8">
     <title>贪吃蛇</title>
     <link rel="stylesheet" href="./css/snake.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="./js/snake.js"></script>
     <script>
         window.onload = function(){
+            //创建对象
             var snake = new Snake("content");
+            //初始化对象
+            snake.init();
+            //开始
+            document.getElementById("start").onclick=function(){
+                    snake.run();
+            };
+            //暂替show
+            document.getElementById("stop").onclick=function(){
+                    snake.stop();
+            };
         }
     </script>
 </head>
 <body>
     <div class="title">
         <h1>贪吃蛇</h1>
-        <span>Score:</span>
+       <p>分数:<span id="score"></span></p>
+        <p>难度:中</p>
     </div>
      <div id = "content">
      </div>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>LED Display-in JSX</title>
+    <!--引入React库-->
+    <script src="lib/react.min.js"></script>
+    <!--引入JSX转换库-->
+    <script src="lib/react.dom.js"></script>
+    <!--组件样式-->
+    <style>
+        @font-face {
+            font-family:"LED";
+            /*src:url("font/LED.eot?") format("eot"),*/
+            /*url("font/LED.woff") format("woff"),*/
+            /*url("font/LED.ttf") format("truetype"),*/
+            /*url("font/LED.svg#LED") format("svg");*/
+            font-weight:normal;
+            font-style:normal;
+        }
+        .ez-led{
+            font-family : "LED";
+            font-size : 40px;
+            background : #70d355;
+            width: 300px;
+            height:60px;
+            line-height : 60px;
+            text-align : right;
+            padding : 10px;
+            letter-spacing:5px;
+        }
+    </style>
+</head>
+<body>
+<!--定义容器-->
+<div id="content"></div>
+
+<!--声明脚本类型为JSX-->
+<script type="text/jsx">
+
+    //定义React组件
+    var EzLedComp = React.createClass({
+        //每个React组件都应该事先render()方法
+        render : function(){
+            var e =
+
+                //JSX-->
+                    <div>
+                        <div className="ez-led">Hello, React!</div>
+                        <div className="ez-led">2015-04-15</div>
+                    </div>;
+            //<--JSX
+
+            return e;
+        }
+    });
+    //渲染
+    React.render(
+            <EzLedComp/> , //JSX
+            document.querySelector("#content"));
+
+</script>
+</body>
+</html>
