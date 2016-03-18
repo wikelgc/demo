@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>web表单</title>
+</head>
+<body>
+
+    <form action="#" method="post">
+        用户名:<input type="text" name="username" value="" placeholder="请输入用户名" maxlength="15">
+        <!-- text 文本输入框-->
+        <!--maxlength 输入框的最大长度-->
+        密码:<input type="password" name="userPassword" value="" placeholder="请输入密码">
+        <!-- password 密码输入框-->
+        <!--placeholder IE 6 7 8不支持-->
+        性别:<input type="radio" name="sex" checked="checked">男<input type="radio" name="sex">女
+        <!--checked 默认选中属性 只适合按钮-->
+        爱好:<input type="checkbox" > 游泳<input type="checkbox">打篮球
+        你喜欢的食物
+        <select size="4">
+            <option>拉面</option>
+            <option>煎饼</option>
+            <option>鸡蛋</option>
+            <option>油条</option>
+        </select>
+        <input type="reset" >
+        <input type="submit" >
+        <input type="button" value="普通按钮">
+
+        <textarea rows="10" cols="10"></textarea>
+        <!--submit 提交按钮-->
+    </form>
+</body>
+</html>
