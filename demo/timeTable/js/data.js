@@ -22,14 +22,9 @@ var subject=[
     }
 ];
 
-
-//var timer=[{
-//    "011":subject[0].subjectName;
-//    "0"
-//}]
-
-
-//
+//var classTime{
+//    [0118,], [],[],[]
+//}
 
 var time = {
     "teacherId":"001",
