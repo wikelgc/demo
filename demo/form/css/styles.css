@@ -1,0 +1,50 @@
+
+/* Form
+ * ------------------------------------------------ */
+
+/*#my-form {*/
+ /*border: 1px solid #ccc;*/
+ /*padding: 3em;*/
+ /*border-radius: 3px;*/
+ /*box-shadow: 0 0 2px rgba(0,0,0,.2);*/
+/*}*/
+
+/*.my-form {*/
+  /*border: 1px solid #ccc;*/
+  /*padding: 3em;*/
+  /*border-radius: 3px;*/
+  /*box-shadow: 0 0 2px rgba(0,0,0,.2);*/
+/*}*/
+
+
+
+/* Labels on top */
+/*.ideal-field { clear: both; margin-top: 1em; }*/
+/*.ideal-error { margin-top: 3em; }*/
+/*.stack .ideal-field { margin: auto; }*/
+
+
+/* Responsive
+ * ------------------------------------------------ */
+
+@media all and (max-width: 768px) {
+  #main { padding: 30px 0; }
+  #my-form { padding: 1.5em; margin-top: 30px; }
+  #calltoaction { float: left; margin: 0; }
+  #download, #title, #calltoaction { float: left; clear: both; }
+  #download { float: left; margin-top: .8em; }
+}
+
+#agree_box img{
+  margin-left:80px;
+}
+
+#agree_box .checked{
+ display: inline-block;
+ // background: url(images/ipt.png) 300px 253px no-repeat;
+ // border: 1px solid red;
+ // margin-right:100px;
+ // left:200px;
+ // text-align: right;
+}
+

@@ -1,0 +1,93 @@
+.window_mask{
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .3;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+
+.Signform_SignInBox{
+    position:fixed;
+    /*border:1px solid #000;*/
+    box-shadow: 0 0 12px rgba(0,0,0,0.5);
+    border-radius: 5px;
+    background: white;
+}
+
+.Signform_header{
+    background: #f7f7f7;
+    border: 1px solid #ddd;
+    color:#333;
+    text-align: left;
+    padding: 5px;
+    font-size: 18px;
+}
+
+.Signform_header span{
+    float:right;
+    margin-right: 10px;
+    color: #dddddd;
+    cursor: pointer;
+}
+
+.Signform_body input{
+    margin:10px 10px;
+    width:330px;
+    height:40px;
+    padding: 0 10px;
+}
+
+#submit{
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #fff;
+    background: #3f89ec;
+    width: 75%;
+}
+
+.Signform_body{
+    padding: 10px;
+}
+
+.my-signUp-form label{
+    display: inline-block;
+    width: 15%;
+    text-align: right;
+}
+
+.my-signUp-form input{
+    display: inline-block;
+    width: 70%;
+}
+
+#verima{
+    width: 35%;
+}
+
+.my-signUp-form .get-varima{
+    width: 33%;
+    margin-left:0px ;
+    height: 42px;
+    cursor: pointer;
+    color: #fff;
+    background: #3f89ec;
+
+    /*height: ;*/
+
+}
+
+#signform-checkbox {
+    padding: 0;
+    margin: 10px;
+    display: inline-block;
+    width: auto;
+    height: auto;
+}
+.my-signUp-form .checkbox_label{
+    width: auto;
+}
+
