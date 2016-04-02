@@ -2,14 +2,18 @@
  * Created by admin on 2016/3/29.
  */
 
+
+//获取棋盘id
 var chess = document.getElementById("chess");
 var context = chess.getContext("2d");
 
+//设置棋盘的颜色
 context.strokeStyle="#bfbfbf";
 
 var chessBoard=[];
 var me = true;
 
+//设置棋盘内的元素  0 - 无棋子 1 -白棋 2-黑棋
 for(var i=0;i<15;i++){
     chessBoard[i]=[];
     for(var j=0;j<15;j++){
@@ -18,8 +22,7 @@ for(var i=0;i<15;i++){
 }
 
 
-
-
+//画棋盘
 var drawChessBoard = function(){
     for(var i=0;i<15;i++){
         context.moveTo(15+i*30,15);
@@ -31,18 +34,22 @@ var drawChessBoard = function(){
     }
 };
 
+//落子 参数 x轴 y轴 白/黑棋
 var oneStep=function(i,j,me) {
     context.beginPath();
+    //画棋子
     context.arc(15+i*30, 15+j*30, 13, 0, 2*Math.PI);
     context.closePath();
 
-    var gradient = context.createRadialGradient(15+i*30+2, 15+j*30+2);
+    var gradient = context.createRadialGradient(15+i*30+2, 15+j*30-2,13,15+i*30+2, 15+j*30-2,20);
+
+    //棋子填充颜色
     if (me) {
-        gradient.addColorStop(0, "#0a0a0a");
-        gradient.addColorStop(1, "#636766");
-    } else {
         gradient.addColorStop(0, "#d1d1d1");
         gradient.addColorStop(1, "#F9f9f9");
+    } else {
+        gradient.addColorStop(0, "#0a0a0a");
+        gradient.addColorStop(1, "#636766");
     }
 
     context.fillStyle = gradient;
@@ -51,6 +58,7 @@ var oneStep=function(i,j,me) {
 
 
 chess.onclick=function(e){
+    //获取点击事件
     var x = e.offsetX;
     var y = e.offsetY;
     var i=Math.floor(x/30);
@@ -79,9 +87,9 @@ window.onload=function(){
     //oneStep(1,1,false);
 
     context.beginPath();
-    context.arc(200,200,100,0,2*Math.PI);
+    context.arc(317,313,13,0,2*Math.PI);
     context.closePath();
-    var gradient = context.createRadialGradient(200,200,50,200);
+    var gradient = context.createRadialGradient(317,313,13,317,313,20);
     gradient.addColorStop(0,"#0a0a0a");
     gradient.addColorStop(1,"#636766");
     context.fillStyle=gradient;
