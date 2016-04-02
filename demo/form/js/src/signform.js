@@ -1,7 +1,8 @@
 // window.js
 define(['jquery','jqueryUI','idealforms'],function($,$UI,idealforms){
 	//设置Window宽高的默认值
-	function Signform(){
+	function signForm(){
+		//表单默认配置项
 		this.cfg={
 			hasCloseBtn:true,
 			isDraggable:true,
@@ -11,15 +12,19 @@ define(['jquery','jqueryUI','idealforms'],function($,$UI,idealforms){
 			handler:null,
 			handler4SubmitBtn:null,
 			handler4CloseBtn:null,
-
 			hasMask:true,
+			signUp:{},
+
+
 		}
 	}
 
-	Signform.prototype={
-		SignIn:function(cfg){
+	signForm.prototype={
+		signIn:function(cfg){
 			var CFG = $.extend(this.cfg,cfg);
 
+
+			//html
 			//设置面板
 			var boundingBox=$(
 				'<div class="Signform_SignInBox">'+
@@ -39,6 +44,7 @@ define(['jquery','jqueryUI','idealforms'],function($,$UI,idealforms){
 			);
 
 
+			//css
 			var mask = null;
 			if(CFG.hasMask){
 				mask=$('<div class="window_mask"></div>');
@@ -56,7 +62,7 @@ define(['jquery','jqueryUI','idealforms'],function($,$UI,idealforms){
 				top :(CFG.top ||(window.innerHeight-CFG.height)/2)+"px"
 			});
 
-
+			//js
 			//事件监听
 			//登录
 			$("#submit").click(function() {
@@ -88,7 +94,7 @@ define(['jquery','jqueryUI','idealforms'],function($,$UI,idealforms){
 			}
 		},
 
-		SignUp:function(cfg){
+		signUp:function(cfg){
 			var CFG = $.extend(this.cfg,cfg);
 
 			//设置面板
@@ -216,6 +222,6 @@ define(['jquery','jqueryUI','idealforms'],function($,$UI,idealforms){
 	};
 
 	return{
-		Signform:Signform
+		signForm:signForm
 	}
 });

@@ -11,19 +11,19 @@ require.config({
 	}
 });
 
-require(['jquery','window','signform'],function($,w,s,ideal){
+require(['jquery','window','signform'],function($,w,s){
 	$("#signIn").click(function() {
 		/* Act on the event */
-		var sign = new s.Signform();
-		sign.SignIn({
+		var sign = new s.signForm();
+		sign.signIn({
 			title:"登录"
 		})
 	});
 
 	$("#signUp").click(function() {
 		/* Act on the event */
-		var sign = new s.Signform();
-		sign.SignUp({
+		var sign = new s.signForm();
+		sign.signUp({
 			title:"用户注册",
 			width:1000,
 			height:1000
