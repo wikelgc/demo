@@ -16,18 +16,38 @@ define(['jquery','jqueryUI','widget',],function($,$UI,widget){
             skinClassName:null,
             text4Aleratbtn:"确定",
             handler4AlertBtn:null,
-            handler4CloseBtn:null
+            handler4CloseBtn:null,
+
+            //confirm
+            text4ConfirmBtn:"确定",
+            text4CancelBtn:"取消",
+            handler4ConfirmBtn:null,
+            handlerCancelBtn:null
 
         }
     }
 
     window.prototype= $.extend({},new widget.Widget(),{
         renderUI:function(){
+
+            var footerContent="";
+            switch(this.cfg.winType){
+                case "alert":
+                    footerContent='<input type="button" value="'+
+                            this.cfg.text4Aleratbtn+'"+class="window_alertBtn">';
+                    break;
+                case "confirm":
+                    footerContent='<input type="button" value="'+
+                            this.cfg.text4ConfirmBtn+'"class="window_confirmBtn"><input type="button" value="'+this.cfg.text4CancelBtn+
+                            '"class="window_cancerBtn">';
+                        break;
+            }
+
             this.boundingBox=$(
                 '<div class="window_boundingBox">'+
                     '<div class="window_header">'+this.cfg.title+'</div>'+
                     '<div class="window_body">'+this.cfg.content+'</div>'+
-                    '<div class="window_footer">'+'<input type="button" class="window_alertBtn" value="'+this.cfg.text4Aleratbtn+'"></div>'+
+                    '<div class="window_footer">'+footerContent+'"></div>'+
                 '</div>'
             );
 
@@ -50,6 +70,12 @@ define(['jquery','jqueryUI','widget',],function($,$UI,widget){
             }).delegate(".window_closeBtn","click",function(){
                 //that.fire("close");
                 that.destroy();
+            }).delegate(".window_comfirmBtn","click",function(){
+                //that.fire("confirm");
+                that.destroy();
+            }).delegate(".window_cancerBtn","click",function(){
+                //that.fire("cancel");
+                that.destroy();
             });
 
             if(this.cfg.handler4AlertBtn){
@@ -57,6 +83,12 @@ define(['jquery','jqueryUI','widget',],function($,$UI,widget){
             }
             if(this.cfg.handler4CloseBtn){
                 this.on("close",this.cfg.handler4CloseBtn);
+            }
+            if(this.cfg.handler4ConfirmBtn){
+                this.on("alert",this.cfg.handler4ConfirmBtn);
+            }
+            if(this.cfg.handlerCancelBtn){
+                this.on("close",this.cfg.handlerCancelBtn);
             }
         },
 
@@ -87,10 +119,16 @@ define(['jquery','jqueryUI','widget',],function($,$UI,widget){
         },
 
         alert:function(cfg){
-            $.extend(this.cfg,cfg);
+            $.extend(this.cfg,cfg,{winType:"alert"});
+            this.render();
+            return this;
+        },
+        confirm:function(cfg){
+            $.extend(this.cfg,cfg,{winType:"confirm"});
             this.render();
             return this;
         }
+
     });
 
     return{
