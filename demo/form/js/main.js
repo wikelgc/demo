@@ -3,20 +3,22 @@
 require.config({
 	paths:{
 		jquery:"./lib/jquery-2.2.2",
-		jqueryUI:"lib/jquery-ui.min",
-		idealforms:"lib/idealforms",
+		jqueryUI:"lib/jquery-ui",
+		validation:"lib/jquery.validate",
 		window:"src/window",
 		widget:"src/widget",
-		signform:"src/signform"
+		signForm:"src/signForm"
 	}
 });
 
-require(['jquery','window','signform'],function($,w,s){
+require(['jquery','window','signForm'],function($,w,s){
 	$("#signIn").click(function() {
 		/* Act on the event */
 		var sign = new s.signForm();
-		sign.signIn({
-			title:"登录"
+		sign.signIns({
+			title:"登录",
+			width:500,
+			height:500
 		})
 	});
 
@@ -25,8 +27,8 @@ require(['jquery','window','signform'],function($,w,s){
 		var sign = new s.signForm();
 		sign.signUp({
 			title:"用户注册",
-			width:1000,
-			height:1000
+			width:500,
+			height:500
 		})
 	});
 
@@ -38,9 +40,9 @@ require(['jquery','window','signform'],function($,w,s){
 			width:300,
 			height:180
 		}).on("alert",function(){
-			alert("alert headler");
+			alert("alert handler");
 		}).on("close",function(){
-			alert("close headler");
+			alert("close handler");
 		})
 	});
 });

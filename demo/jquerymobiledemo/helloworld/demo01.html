@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery mobile--hello world</title>
+    <meta name="viewport" content="width=device - width,initial-scale=1;">
+    <link href="../lib/jquery.mobile-1.4.5.css" rel="stylesheet" type="text/css">
+
+    <script src="../lib/jquery-2.2.2.js"></script>
+    <script src="../lib/jquery.mobile-1.4.5.js"></script>
+</head>
+<body>
+<!--<div id = "page1" data-role="page">-->
+<!--<div data-role="header"><h1>jquery mobile</h1></div>-->
+<!--<div data-role="content"><p>Hello world</p></div>-->
+<!--<div data-role="footer"><h1>made in china</h1></div>-->
+<!--</div>-->
+
+<section id = "page1" data-role="page">
+    <header data-role="header"><h1>jquery mobile</h1></header>
+    <div data-role="content">
+        <p>这是首页</p>
+        <p><a href="#page2">详情页</a></p>
+    </div>
+    <footer data-role="footer"><h1>made in china</h1></footer>
+</section>
+
+<section id = "page2" data-role="page">
+    <header data-role="header"><h1>jquery mobile</h1></header>
+    <div data-role="content">
+        <p><a href="#page1">返回首页</p>
+    </div>
+    <footer data-role="footer"><h1>made in china</h1></footer>
+</section>
+</body>
+</html>

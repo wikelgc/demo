@@ -7,20 +7,20 @@
 
     var snake=function(id){
         this.content = document.getElementById(id);
-        this.data = [];//棋盘
-        this.snakeArr = [];//蛇
+        this.data = [];//
+        this.snakeArr = [];//
         this.dirctor = "right";
         this.score = 0;
-        this.timer= "";//定时器
+        this.timer= "";//
 
-        //游戏容器面积
+        //
         this.colLength=20;
         this.rowLength=20;
     };
 
-    //游戏初始化
+    //
     snake.prototype.init=function(){
-        //获取snake对象
+        //
         var that = this;
 
         this.content.setAttribute("class","snake");
@@ -34,12 +34,12 @@
             this.data[i]=row;
         }
 
-        //初始化蛇
+        //
         this.createSnake();
         this.show();
         this.showScore();
 
-        //事件回调，this事件调用本身
+        //
         document.onkeydown=function(event){
             //console.log(event.keyCode);
             if(event.keyCode==83&&that.dirctor!="up"){
@@ -56,24 +56,24 @@
 
     };
 
-    //游戏显示
+    //
     snake.prototype.show=function(){
         var that = this;
-        //先显示
+        //
         for(var i=0;i<that.snakeArr.length;i++){
             that.data[that.snakeArr[i].row][that.snakeArr[i].col].setAttribute("class","show");
         }
-        //创建食物
+        //
         that.createFood();
-        //运行游戏
+        //
         //that.run();
     };
 
-    //游戏运行
+    //
     snake.prototype.run=function(){
         var that=this;
         that.timer=setInterval(function(){
-            //获取蛇头的位置
+            //
             var temp;
             if(that.dirctor=="right"){
                 temp={"row":that.snakeArr[0].row,"col":that.snakeArr[0].col+1};
@@ -85,54 +85,54 @@
                 temp={"row":that.snakeArr[0].row+1,"col":that.snakeArr[0].col};
             };
 
-            //超出棋盘或者碰到自己 游戏结束
+            //
             if((temp.row<0||temp.row>that.rowLength-1||temp.col<0||temp.col>that.colLength-1)||(that.data[temp.row][temp.col].getAttribute("class")=="show")){
                 that.gameOver();
                 return;
             };
-            //清掉蛇的位置
+            //
             for(var i=0;i<that.snakeArr.length;i++){
                 that.data[that.snakeArr[i].row][that.snakeArr[i].col].setAttribute("class","");
             };
-            //判断下一步是否是食物
+            //
             if(that.data[temp.row][temp.col].getAttribute("class")=="food"){
-                //添加分数
+                //
                 that.showScore();
                 that.snakeArr.push(temp);
                 that.data[temp.row][temp.col].setAttribute("class","");
                 that.createFood();
             };
-            //移动蛇
+            //
             for(var i=that.snakeArr.length-1;i>0;i--){
                 that.snakeArr[i]=that.snakeArr[i-1];
             }
-            //设置蛇头
+            //
             that.snakeArr[0]=temp;
-            //重现蛇的位置
+            //
             for(var i=0;i<that.snakeArr.length;i++){
                 that.data[that.snakeArr[i].row][that.snakeArr[i].col].setAttribute("class","show");
             }
         },200);
     };
 
-    //游戏暂停
+    //锟斤拷戏锟斤拷停
     snake.prototype.stop=function(){
         clearInterval(this.timer);
     };
 
-    //游戏结束
+    //锟斤拷戏锟斤拷锟斤拷
     snake.prototype.gameOver=function(){
-        //停止游戏
+        //停止锟斤拷戏
         this.stop();
         this.content.innerHTML="";
         this.init();
         alert("comeover");
     };
 
-    //初始化食物
+    //锟斤拷始锟斤拷食锟斤拷
     snake.prototype.createFood=function(){
 
-        //判别食物出现在蛇内部的情况
+        //锟叫憋拷食锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷诓锟斤拷锟斤拷锟斤拷
         do{
             var row = Math.floor(Math.random()*this.rowLength);
             var col = Math.floor(Math.random()*this.colLength);
@@ -142,7 +142,7 @@
         this.data[row][col].setAttribute("class","food");
     };
 
-    //初始化蛇
+    //锟斤拷始锟斤拷锟斤拷
     snake.prototype.createSnake=function(){
 
         var row = Math.floor(Math.random()*(this.rowLength-6))+3;
@@ -152,13 +152,13 @@
         }
     };
 
-    //显示分数
+    //锟斤拷示锟斤拷锟斤拷
     snake.prototype.showScore=function(){
         var score = document.getElementById("score");
         score.innerText=this.score++;
 
     };
 
-    //开始
+    //锟斤拷始
     window.Snake=snake;
 }));

@@ -1,15 +1,15 @@
-.window_mask{
+.window-mask{
     width: 100%;
     height: 100%;
     background: #000;
     opacity: .3;
     position: absolute;
-    left: 0px;
-    top: 0px;
+    left: 0;
+    top: 0;
 }
 
 
-.Signform_SignInBox{
+.signForm-box{
     position:fixed;
     /*border:1px solid #000;*/
     box-shadow: 0 0 12px rgba(0,0,0,0.5);
@@ -17,7 +17,7 @@
     background: white;
 }
 
-.Signform_header{
+.signForm-header{
     background: #f7f7f7;
     border: 1px solid #ddd;
     color:#333;
@@ -26,14 +26,14 @@
     font-size: 18px;
 }
 
-.Signform_header span{
+.signForm-header span{
     float:right;
     margin-right: 10px;
     color: #dddddd;
     cursor: pointer;
 }
 
-.Signform_body input{
+.signForm-body input{
     margin:10px 10px;
     width:330px;
     height:40px;
@@ -49,7 +49,7 @@
     width: 75%;
 }
 
-.Signform_body{
+.signForm-body{
     padding: 10px;
 }
 
@@ -70,7 +70,7 @@
 
 .my-signUp-form .get-varima{
     width: 33%;
-    margin-left:0px ;
+    margin-left:0 ;
     height: 42px;
     cursor: pointer;
     color: #fff;
@@ -80,7 +80,7 @@
 
 }
 
-#signform-checkbox {
+#signForm-checkbox {
     padding: 0;
     margin: 10px;
     display: inline-block;
@@ -91,3 +91,40 @@
     width: auto;
 }
 
+
+.signForm-body li{
+    list-style: none;
+    width: 80%;
+    height: 68px;
+}
+
+.signForm-body .checkboxs{
+    width: 20px;
+    height: 20px;
+    float: left;
+}
+
+.signForm-body label{
+    display: inline-block;
+    margin-top: 10px;
+
+}
+
+.signForm-body .right{
+    float: right;
+    margin-right: -10px;
+
+}
+.signForm-body .left{
+    float: left;
+}
+
+.signForm-body .submits{
+    width: 40%;
+    margin: 0 auto;
+    color: green;
+}
+
+.signForm-body .error{
+    display:block;
+}

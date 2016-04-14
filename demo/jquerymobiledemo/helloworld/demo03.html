@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>预加载和页面缓存</title>
+    <meta name="viewport" content="width=device - width,initial-scale=1;">
+    <link href="../lib/jquery.mobile-1.4.5.css" rel="stylesheet" type="text/css">
+
+    <script src="../lib/jquery-2.2.2.js"></script>
+    <script src="../lib/jquery.mobile-1.4.5.js"></script>
+    <script>
+        $(function(){
+            $.mobile.page.prototype.options.domCache=true;//设置页面缓存
+        })
+    </script>
+</head>
+<body>
+
+<section id = "page1" data-role="page">
+    <header data-role="header"><h1>预加载</h1></header>
+    <div data-role="content">
+        <p><a href="demo01.html" data-prefetch="true">预加载</a></p>
+
+    </div>
+    <footer data-role="footer"><h1>made in china</h1></footer>
+</section>
+
+<section id = "page2" data-role="page">
+    <header data-role="header"><h1>缓存页面</h1></header>
+    <div data-role="content">
+        <p><a href="#page1">这是一个缓存页面</p>
+    </div>
+    <footer data-role="footer"><h1>made in china</h1></footer>
+</section>
+</body>
+</html>

@@ -24,18 +24,19 @@
     </script>
 </head>
 <body>
-    <div class="title">
-        <h1>贪吃蛇</h1>
-       <p>分数:<span id="score"></span></p>
-        <p>难度:中</p>
+    <div class="snake-box">
+        <div class="snake-content">
+            <div id="content"></div>
+        </div>
+        <div class="snake-title">
+            <ul>
+                <li>贪吃蛇</li>
+                <li>难度:中</li>
+                <li>分数:<label id="score"></label></li>
+                <li><input id ="start" value="开始" type="button"></li>
+                <li><input id ="stop" value="暂停" type="button"></li>
+            </ul>
+        </div>
     </div>
-     <div id = "content">
-     </div>
-
-    <div class="title">
-        <input id ="start" value="开始" type="button">
-        <input id ="stop" value="暂停" type="button">
-    </div>
-
 </body>
 </html>
