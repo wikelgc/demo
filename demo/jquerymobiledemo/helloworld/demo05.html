@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery mobile--hello world</title>
+    <meta name="viewport" content="width=device - width,initial-scale=1;">
+    <link href="../lib/jquery.mobile-1.4.5.css" rel="stylesheet" type="text/css">
+
+    <script src="../lib/jquery-2.2.2.js"></script>
+    <script src="../lib/jquery.mobile-1.4.5.js"></script>
+</head>
+<body>
+<section  data-role="page" id="e1" data-add-back-btn="true">
+    <header data-role="header"><h1>后退文字按钮</h1></header>
+    <div data-role="content">
+        <p><a href="#e2">下一页</a></p>
+    </div>
+    <footer data-role="footer"><h1>made in china</h1></footer>
+</section>
+
+<section  data-role="page" id="e2" data-add-back-btn="true">
+    <header data-role="header"><h1>后退文字按钮</h1></header>
+    <div data-role="content">
+        <p><a href="#e3">尾页</a></p>
+    </div>
+    <footer data-role="footer"><h1>made in china</h1></footer>
+</section>
+
+<section  data-role="page" id="e3" data-add-back-btn="true" data-back-btn-text="首页">
+    <header data-role="header"><h1>后退文字按钮</h1></header>
+    <div data-role="content">
+        <p><a href="#e1">首页</a></p>
+    </div>
+    <footer data-role="footer"><h1>made in china</h1></footer>
+</section>
+</body>
+</html>
