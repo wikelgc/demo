@@ -4,9 +4,10 @@
     <meta charset="utf-8">
     <title>LED Display-in JSX</title>
     <!--引入React库-->
-    <script src="lib/react.min.js"></script>
+    <script src="lib/react.js"></script>
     <!--引入JSX转换库-->
-    <script src="lib/react.dom.js"></script>
+    <script src="lib/react-dom.js"></script>
+    <script src="lib/react-dom-server.js"></script>
     <!--组件样式-->
     <style>
         @font-face {
@@ -33,6 +34,7 @@
 </head>
 <body>
 <!--定义容器-->
+<div id="contents">11</div>
 <div id="content"></div>
 
 <!--声明脚本类型为JSX-->
