@@ -115,12 +115,12 @@
         },200);
     };
 
-    //��Ϸ��ͣ
+    //
     snake.prototype.stop=function(){
         clearInterval(this.timer);
     };
 
-    //��Ϸ����
+    //
     snake.prototype.gameOver=function(){
         //ֹͣ��Ϸ
         this.stop();
@@ -129,7 +129,7 @@
         alert("comeover");
     };
 
-    //��ʼ��ʳ��
+    //
     snake.prototype.createFood=function(){
 
         //�б�ʳ����������ڲ������
@@ -142,7 +142,7 @@
         this.data[row][col].setAttribute("class","food");
     };
 
-    //��ʼ����
+    //
     snake.prototype.createSnake=function(){
 
         var row = Math.floor(Math.random()*(this.rowLength-6))+3;
@@ -152,7 +152,7 @@
         }
     };
 
-    //��ʾ����
+    //
     snake.prototype.showScore=function(){
         var score = document.getElementById("score");
         score.innerText=this.score++;

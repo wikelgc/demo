@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Basic Example</title>
+    <link rel="stylesheet" href="../shared/css/base.css" />
+</head>
+<body>
+<h1>Basic Example</h1>
+<div id="container">
+    <p>
+        To install React, follow the instructions on
+        <a href="https://github.com/facebook/react/">GitHub</a>.
+    </p>
+    <p>
+        If you can see this, React is <strong>not</strong> working right.
+        If you checked out the source from GitHub make sure to run <code>grunt</code>.
+    </p>
+</div>
+
+<!--引入React库-->
+<script src="lib/react.min.js"></script>
+<!--引入JSX转换库-->
+<script src="lib/react-dom.js"></script>
+<script src="lib/JSXTransformer.js"></script>
+
+<script type="text/jsx">
+    'use strict'
+    // Define WebComponent
+    var proto = Object.create(HTMLElement.prototype, {
+        createdCallback: {
+            value: function() {
+                var mountPoint = document.createElement('span');
+                this.createShadowRoot().appendChild(mountPoint);
+
+                var name = this.getAttribute('name');
+                var url = 'https://www.google.com/search?q=' + encodeURIComponent(name);
+                ReactDOM.render(<a href={url}>{name}</a>, mountPoint);
+            }
+        }
+    });
+    document.registerElement('x-search', {prototype: proto});
+
+    // Define React Component
+    class HelloMessage extends React.Component {
+        render() {
+            return <div>Hello <x-search name={this.props.name} />!</div>;
+    }
+    }
+
+    // Mount React Component (which uses WebComponent which uses React)
+    var container = document.getElementById('container');
+
+    ReactDOM.render(<HelloMessage name="Jim Sproch" />, container);
+</script>
+</body>
+</html>

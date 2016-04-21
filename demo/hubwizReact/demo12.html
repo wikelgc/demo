@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Basic Example</title>
+</head>
+<body>
+<h1>Basic Example</h1>
+<div id="container">
+    <p>
+        To install React, follow the instructions on
+        <a href="https://github.com/facebook/react/">GitHub</a>.
+    </p>
+    <p>
+        If you can see this, React is <strong>not</strong> working right.
+        If you checked out the source from GitHub make sure to run <code>grunt</code>.
+    </p>
+</div>
+
+<!--引入React库-->
+<script src="lib/react.min.js"></script>
+<!--引入JSX转换库-->
+<script src="lib/react-dom.js"></script>
+<script src="lib/JSXTransformer.js"></script>
+
+<script type="text/jsx">
+
+    //在虚拟dom上创建ExampleApplication元素
+
+    var Counter = React.createClass({
+        getInitialState:function(){
+            return {count:0};
+        },
+        handleClick:function(){
+            this.setState({
+                count:this.state.count+1,
+            });
+        },
+        render:function(){
+            return (
+                    <div>
+                        <input type="button" value="hello" onClick={this.handleClick}/>
+                <button onClick={this.handleClick}>
+                    Click me! Number of clicks: {this.state.count}
+                </button></div>
+
+            );
+        }
+    });
+
+    ReactDOM.render(<Counter/>, document.getElementById('container'));
+
+
+</script>
+</body>
+</html>

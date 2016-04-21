@@ -7,14 +7,14 @@
 </head>
 <body>
     <div class="main" >
-        <canvas id="chess" width="450px" height="450px"></canvas>
+        <canvas id="chess" class="chess" width="450px" height="450px"></canvas>
         <div id="operation">
-            <div class="tip">得分：<span class="light red" id="landMineCount">0</span></div>
-            <div class="tip">持续时间: <span class="light f60" id="costTime">0</span>秒</div>
+            <div class="tip">白棋：<span class="light red" id="whiteChessCount">0</span></div>
+            <div class="tip">黑棋: <span class="light red" id="blackChessCount">0</span></div>
             <fieldset>
-                <legend>难度选择：</legend>
+                <legend>棋盘大小：</legend>
                 <input type="radio" name="level" id="llevel" checked="checked" value="10" /><label for="llevel">初级（10*10）</label><br />
-                <input type="radio" name="level" id="mlevel" value="15" /><label for="mlevel">中级（15*15）</label><br />
+                <input type="radio" name="level" id="mlevel" checked="checked" value="15" /><label for="mlevel">中级（15*15）</label><br />
                 <input type="radio" name="level" id="hlevel" value="20" /><label for="hlevel">高级（20*20）</label><br />
             </fieldset>
             <input type="button" id="begin" value="开始游戏" /><br />
