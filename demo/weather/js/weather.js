@@ -3,7 +3,7 @@ var _strCity = {};
 
 
 $(document).on("pagebeforeshow", "#page1", function(){
-	getAjax();
+	getAjax(_strCity,"one");
 	//dom事件
 	$(".select").on("click", function(event){
 		alert("hello");
@@ -20,7 +20,7 @@ $(document).on("pagebeforeshow", "#page1", function(){
 	$(".refresh").on("tap", function(){
 		window.location.reload();
 		//showDetail();
-		getAjax();
+		getAjax(_strCity,"one");
 	});
 });
 
@@ -77,77 +77,35 @@ $(document).on("pagebeforeshow", "#page1", function(){
 
 /*页面二*/
 $(document).on("pagebeforeshow", "#page2", function(){
-	var urlCity = "https://api.heweather.com/x3/weather?cityid=CN101200101&key=ead00e8e8c2540c9a87af54bb35002cf";
-	var urlCityId = "https://api.heweather.com/x3/citylist?search=allchina&key=ead00e8e8c2540c9a87af54bb35002cf";
-	var _strCity = {};
-	if(window.XMLHttpRequest){
-		var oAjax=new XMLHttpRequest;
-	}
-	else{
-		var oAjax=new ActiveXObject('Microsoft.XMLHTTP');
-	}
-	oAjax.open('GET', urlCity, true);
-	oAjax.send(null);
-	oAjax.onreadystatechange=function(){
-		if(oAjax.readyState==4){
-			if(oAjax.status==200){
-				_strCity = JSON.parse(oAjax.responseText);
-				var a = document.getElementsByClassName("collap-title-left");
-				for (var i = 2; i < a.length; i++) {
-					a[i].innerHTML=_strCity["HeWeather data service 3.0"][0]["daily_forecast"][i]["date"].substring(5);
-				}
-				var b = document.getElementsByClassName("pic_ds");
-				for (var i = 0; i < b.length; i++) {
-					b[i].src="http://files.heweather.com/cond_icon/"+_strCity["HeWeather data service 3.0"][0]["daily_forecast"][i]["cond"]["code_d"]+".png";
-				}
-				var c = document.getElementsByClassName("pic_ns");
-				for (var i = 0; i < c.length; i++) {
-					c[i].src="http://files.heweather.com/cond_icon/"+_strCity["HeWeather data service 3.0"][0]["daily_forecast"][i]["cond"]["code_n"]+".png";
-				}
-				var d = document.getElementsByClassName("pic_d");
-				for (var i = 0; i < d.length; i++) {
-					d[i].src="http://files.heweather.com/cond_icon/"+_strCity["HeWeather data service 3.0"][0]["daily_forecast"][i]["cond"]["code_d"]+".png";
-				}
-				var e = document.getElementsByClassName("pic_n");
-				for (var i = 0; i < e.length; i++) {
-					e[i].src="http://files.heweather.com/cond_icon/"+_strCity["HeWeather data service 3.0"][0]["daily_forecast"][i]["cond"]["code_n"]+".png";
-				}
-				var f = document.getElementsByClassName("collap-title-right");
-				for (var i = 0; i < f.length; i++) {
-					f[i].innerHTML='<span>' + _strCity["HeWeather data service 3.0"][0]["daily_forecast"][i]["tmp"]["max"] + '℃/' + _strCity["HeWeather data service 3.0"][0]["daily_forecast"][i]["tmp"]["min"] + '℃</span>';
-				}
-				var g = document.getElementsByClassName("collap-content-bottom");
-				for (var i = 0; i < g.length; i++) {
-					g[i].innerHTML=_strCity["HeWeather data service 3.0"][0]["daily_forecast"][i]["wind"]["dir"]+'&nbsp;&nbsp;&nbsp;&nbsp;'+_strCity["HeWeather data service 3.0"][0]["daily_forecast"][i]["wind"]["sc"]+'级';
-				}
-				var h = document.getElementsByClassName("sunrise");
-				for (var i = 0; i < h.length; i++) {
-					h[i].innerHTML='日出&nbsp;&nbsp;&nbsp;&nbsp;'+_strCity["HeWeather data service 3.0"][0]["daily_forecast"][i]["astro"]["sr"];
-				}
-				var j = document.getElementsByClassName("sundown");
-				for (var i = 0; i < j.length; i++) {
-					j[i].innerHTML='日落&nbsp;&nbsp;&nbsp;&nbsp;'+_strCity["HeWeather data service 3.0"][0]["daily_forecast"][i]["astro"]["ss"];
-				}
-				var k = document.getElementsByClassName("left");
-				for (var i = 0; i < k.length; i++) {
-					k[i].innerHTML=_strCity["HeWeather data service 3.0"][0]["daily_forecast"][i]["cond"]["txt_d"];
-				}
-				var l = document.getElementsByClassName("right");
-				for (var i = 0; i < l.length; i++) {
-					l[i].innerHTML=_strCity["HeWeather data service 3.0"][0]["daily_forecast"][i]["cond"]["txt_n"];
-				}
-			}
-			else{
-				if (oAjax.status == 0) {
-					alert("请求失败！没有网络连接...");
-				}
-			}
-		}
-	}
+	//var urlCity = "https://api.heweather.com/x3/weather?cityid=CN101200101&key=ead00e8e8c2540c9a87af54bb35002cf";
+	//var urlCityId = "https://api.heweather.com/x3/citylist?search=allchina&key=ead00e8e8c2540c9a87af54bb35002cf";
+	//var _strCity = {};
+	//if(window.XMLHttpRequest){
+	//	var oAjax=new XMLHttpRequest;
+	//}
+	//else{
+	//	var oAjax=new ActiveXObject('Microsoft.XMLHTTP');
+	//}
+	//oAjax.open('GET', urlCity, true);
+	//oAjax.send(null);
+	//oAjax.onreadystatechange=function(){
+	//	if(oAjax.readyState==4){
+	//		if(oAjax.status==200){
+	//			_strCity = JSON.parse(oAjax.responseText);
+    //
+	//		}
+	//		else{
+	//			if (oAjax.status == 0) {
+	//				alert("请求失败！没有网络连接...");
+	//			}
+	//		}
+	//	}
+	//}
+	getAjax(_strCity,"two");
 });
 
 
-function getAjax(_urlCity){
+function getAjax(_urlCity,number){
 	if (window.XMLHttpRequest) {
 		var oAjax=new XMLHttpRequest;
 	}
@@ -155,14 +113,24 @@ function getAjax(_urlCity){
 		var oAjax=new ActiveXObject('Microsoft.XMLHTTP');
 	}
 
-	if(_urlCity!=undefined){
+	if(_strCity==""){
+		alert(_strCity);
 		oAjax.open('GET', _urlCity, true);
 		oAjax.send(null);
 		oAjax.onreadystatechange=function() {
 			if (oAjax.readyState == 4) {
 				if (oAjax.status == 200) {
 					_strCity = JSON.parse(oAjax.responseText);
-					showDetail();
+					if(number == "one"){
+						showOneDetail();
+					}else if(number == "two"){
+						showTwoDetail();
+					}
+
+				}else{
+					if (oAjax.status == 0) {
+						alert("请求失败！没有网络连接...");
+					}
 				}
 			}
 		}
@@ -170,7 +138,7 @@ function getAjax(_urlCity){
 }
 
 
-function showDetail() {
+function showOneDetail() {
 	$(".refresh p").html(_strCity["HeWeather data service 3.0"][0]["basic"]["update"]["loc"].substring(11) + '更新');
 	$(".page1_pos span").html(_strCity["HeWeather data service 3.0"][0]["basic"]["city"]);
 	$(".aqi .aqi_l").html(_strCity["HeWeather data service 3.0"][0]["aqi"]["city"]["aqi"]);
@@ -215,4 +183,52 @@ function showDetail() {
 	document.getElementsByTagName("table")[0].innerHTML += '<tr>' + trContent2 + '</tr>';
 	document.getElementsByTagName("table")[0].innerHTML += '<tr>' + trContent3 + '</tr>';
 	document.getElementsByTagName("table")[0].innerHTML += '<tr>' + trContent4 + '</tr>';
+}
+
+
+function showTwoDetail(){
+	var a = document.getElementsByClassName("collap-title-left");
+	for (var i = 2; i < a.length; i++) {
+		a[i].innerHTML=_strCity["HeWeather data service 3.0"][0]["daily_forecast"][i]["date"].substring(5);
+	}
+	var b = document.getElementsByClassName("pic_ds");
+	for (var i = 0; i < b.length; i++) {
+		b[i].src="http://files.heweather.com/cond_icon/"+_strCity["HeWeather data service 3.0"][0]["daily_forecast"][i]["cond"]["code_d"]+".png";
+	}
+	var c = document.getElementsByClassName("pic_ns");
+	for (var i = 0; i < c.length; i++) {
+		c[i].src="http://files.heweather.com/cond_icon/"+_strCity["HeWeather data service 3.0"][0]["daily_forecast"][i]["cond"]["code_n"]+".png";
+	}
+	var d = document.getElementsByClassName("pic_d");
+	for (var i = 0; i < d.length; i++) {
+		d[i].src="http://files.heweather.com/cond_icon/"+_strCity["HeWeather data service 3.0"][0]["daily_forecast"][i]["cond"]["code_d"]+".png";
+	}
+	var e = document.getElementsByClassName("pic_n");
+	for (var i = 0; i < e.length; i++) {
+		e[i].src="http://files.heweather.com/cond_icon/"+_strCity["HeWeather data service 3.0"][0]["daily_forecast"][i]["cond"]["code_n"]+".png";
+	}
+	var f = document.getElementsByClassName("collap-title-right");
+	for (var i = 0; i < f.length; i++) {
+		f[i].innerHTML='<span>' + _strCity["HeWeather data service 3.0"][0]["daily_forecast"][i]["tmp"]["max"] + '℃/' + _strCity["HeWeather data service 3.0"][0]["daily_forecast"][i]["tmp"]["min"] + '℃</span>';
+	}
+	var g = document.getElementsByClassName("collap-content-bottom");
+	for (var i = 0; i < g.length; i++) {
+		g[i].innerHTML=_strCity["HeWeather data service 3.0"][0]["daily_forecast"][i]["wind"]["dir"]+'&nbsp;&nbsp;&nbsp;&nbsp;'+_strCity["HeWeather data service 3.0"][0]["daily_forecast"][i]["wind"]["sc"]+'级';
+	}
+	var h = document.getElementsByClassName("sunrise");
+	for (var i = 0; i < h.length; i++) {
+		h[i].innerHTML='日出&nbsp;&nbsp;&nbsp;&nbsp;'+_strCity["HeWeather data service 3.0"][0]["daily_forecast"][i]["astro"]["sr"];
+	}
+	var j = document.getElementsByClassName("sundown");
+	for (var i = 0; i < j.length; i++) {
+		j[i].innerHTML='日落&nbsp;&nbsp;&nbsp;&nbsp;'+_strCity["HeWeather data service 3.0"][0]["daily_forecast"][i]["astro"]["ss"];
+	}
+	var k = document.getElementsByClassName("left");
+	for (var i = 0; i < k.length; i++) {
+		k[i].innerHTML=_strCity["HeWeather data service 3.0"][0]["daily_forecast"][i]["cond"]["txt_d"];
+	}
+	var l = document.getElementsByClassName("right");
+	for (var i = 0; i < l.length; i++) {
+		l[i].innerHTML=_strCity["HeWeather data service 3.0"][0]["daily_forecast"][i]["cond"]["txt_n"];
+	}
 }
