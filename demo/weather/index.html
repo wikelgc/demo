@@ -19,9 +19,9 @@
 		<header data-role="header" data-position="fixed">
 			<a href="#" class="ui-btn ui-icon-location ui-btn-icon-notext ui-shadow ui-corner-all location">选择城市</a>
 			<ul class="selectDownLocation">
-				<li><a href="#">武汉</a></li>
-				<li><a href="#">深圳</a></li>
-			</ul>			<h1>本地天气</h1>
+				<li><a href="#page3">查询</a></li>
+				<li><a href="#page3">热门城市</a></li>
+			</ul>			<h4><a id="homePage">本地天气</a></h4>
 			<a href="#" class="ui-btn ui-icon-carat-d ui-btn-icon-notext ui-shadow ui-corner-all select">下拉</a>
 				<ul class="selectDown">
 					<li><a href="#page2">7天预报</a></li>
@@ -35,7 +35,7 @@
 				<div class="header">
 					<div class="refresh">
 						<img src="images/refresh.png" width="20px" height="20px">
-						<p>10:05更新</p>
+						<p>10:05</p>
 					</div>
 					<div class="page1_pos">
 						<span>武汉</span>
@@ -363,22 +363,25 @@
 		</header>
 			<article role="main" class="ui-content">
 				<div class="ui-field-contain">
-					<labeli for="search-city">城市查询</labeli>
-					<input type="text" name="text-basic" id="search-city" value="武汉">
+					<label for="search-city">城市查询</label>
+					<input href="#page1" type="text" name="text-basic" id="search-city" value="武汉">
 				</div>
 				<div class="ui-field-contain">
 					<label for="search-ip">IP地址查询</label>
 					<input type="text" name="text-basic" id="search-ip" value="">
 				</div>
-				<input type="button" value="搜索" id="search-submit">
+				<a href="#page1"><input type="button" value="搜索" id="search-submit"></a>
 				<ul data-role="listview" data-inset="true" id="list">
 					<li><h1>热门城市</h1></li>
-					<li><a>北京</a></li>
-					<li><a>上海</a></li>
-					<li><a>广州</a></li>
-					<li><a>深圳</a></li>
+					<li><a id="btnBeiJing" href="#page1">北京</a></li>
+					<li><a id="btnShangHai" href="#page1">上海</a></li>
+					<li><a id="btnGuangZhou" href="#page1">广州</a></li>
+					<li><a id="btnShenZhen" href="#page1">深圳</a></li>
+					<li><a id="btnWuHan" href="#page1">武汉</a></li>
+					<li><a id="btnXiaMen" href="#page1">厦门</a></li>
 				</ul>
 			</article>
+
 		<footer data-role="footer" data-position="fixed">
 			<div data-role="navbar">
 				<ul>
