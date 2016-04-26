@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=divice-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css">
+	<script type="text/javascript" src="js/jquery-1.12.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="js/weather.js"></script>
+	<title>天气查询</title>
+</head>
+<body>
+
+
+	<!-- 页面一 -->
+	<section data-role="page" id="page1">
+		<header data-role="header" data-position="fixed">
+			<a href="#" class="ui-btn ui-icon-location ui-btn-icon-notext ui-shadow ui-corner-all location">选择城市</a>
+			<ul class="selectDownLocation">
+				<li><a href="#">武汉</a></li>
+				<li><a href="#">深圳</a></li>
+			</ul>			<h1>武汉查询</h1>
+			<a href="#" class="ui-btn ui-icon-carat-d ui-btn-icon-notext ui-shadow ui-corner-all select">下拉</a>
+				<ul class="selectDown">
+					<li><a href="#page2">7天预报</a></li>
+					<li><a href="#page3">降水预报</a></li>
+				</ul>
+		</header>
+		<article role="main" class="ui-content page1_main">
+			<div class="refresh">
+				<img src="images/refresh.png" width="20px" height="20px">
+				<p>10:05更新</p>
+			</div>
+			<div class="page1_pos">
+				<span>武汉</span>
+			</div>
+			<div class="aqi">
+				<p><span class="aqi_l">26</span><span class="aqi_r">&nbsp;&nbsp;&nbsp;&nbsp;优</span></p>
+				<p><span>PM2.5</span><span class="pm25_r">&nbsp;&nbsp;&nbsp;&nbsp;16</span></p>
+			</div>
+			<div class="basic">
+				<p><span class="tmp">14℃</span><span class="basic_txt">阵雨</span></p>
+				<p><span class="basic_max">15℃</span><span class="basic_min">&nbsp;&nbsp;&nbsp;&nbsp;12℃</span></p>
+				<p><span>湿度</span><span class="basic_hum">&nbsp;&nbsp;&nbsp;&nbsp;100%</span></p>
+				<p><span class="basic_dir">东南风</span><span class="basic_sc">&nbsp;&nbsp;&nbsp;&nbsp;四级</span></p>
+				<p><span class="basic_sr">日出06：05</span><span class="basic_ss">&nbsp;&nbsp;&nbsp;&nbsp;日落18:45</span></p>
+			</div>
+			
+			<p class="table_top">未来趋势</p>
+			<div class="table_wrap">
+				<table>
+					<tr>
+						<td>现在</td>
+						<td>13:00</td>
+						<td>现在</td>
+						<td>13:00</td>
+						<td>现在</td>
+						<td>13:00</td>
+						<td>现在</td>
+						<td>13:00</td>
+						<td>现在</td>
+						<td>13:00</td>
+					</tr>
+					<tr>
+						<td>14℃</td>
+						<td>17℃</td>
+						<td>14℃</td>
+						<td>17℃</td>
+						<td>14℃</td>
+						<td>17℃</td>
+						<td>14℃</td>
+						<td>17℃</td>
+						<td>14℃</td>
+						<td>17℃</td>
+					</tr>
+					<tr>
+						<td>北风</td>
+						<td>东南风</td>
+						<td>北风</td>
+						<td>东南风</td>
+						<td>北风</td>
+						<td>东南风</td>
+						<td>北风</td>
+						<td>东南风</td>
+						<td>北风</td>
+						<td>东南风</td>
+					</tr>
+					<tr>
+						<td>微风</td>
+						<td>5级</td>
+						<td>微风</td>
+						<td>5级</td>
+						<td>微风</td>
+						<td>5级</td>
+						<td>微风</td>
+						<td>5级</td>
+						<td>微风</td>
+						<td>5级</td>
+					</tr>
+				</table>
+			</div>
+			<div class="suggest">
+				<ul data-role="listview" data-inset="true">    
+					<li><a class="comf" href="#comf" data-rel="popup"><span></span>生活指数</a></li>
+					<li><a class="drsg" href="#drsg" data-rel="popup"><span></span>穿衣指数</a></li>
+					<li><a class="uv" href="#uv" data-rel="popup"><span></span>紫外线指数</a></li>
+					<li><a class="cw" href="#cw" data-rel="popup"><span></span>洗车指数</a></li>
+					<li><a class="trav" href="#trav" data-rel="popup"><span></span>旅游指数</a></li>   
+					<li><a class="flu" href="#flu" data-rel="popup"><span></span>感冒指数</a></li>
+					<li><a class="sport" href="#sport" data-rel="popup"><span></span>运动指数</a></li>
+				</ul>
+				<div id="comf" data-role="popup" data-position-to="window" class="ui-content">
+					<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">关闭</a>
+					<p>comf白天不太热也不太冷，风力不大，相信您在这样的天气条件下，应会感到比较清爽和舒适。</p>
+				</div>
+				<div id="drsg" data-role="popup" data-position-to="window" class="ui-content">
+					<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">关闭</a>
+					<p>drsg建议着厚外套加毛衣等服装。年老体弱者宜着大衣、呢外套加羊毛衫。</p>
+				</div>
+				<div id="uv" data-role="popup" data-position-to="window" class="ui-content">
+					<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">关闭</a>
+					<p>uv属弱紫外线辐射天气，无需特别防护。若长期在户外，建议涂擦SPF在8-12之间的防晒护肤品。</p>
+				</div>
+				<div id="cw" data-role="popup" data-position-to="window" class="ui-content">
+					<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">关闭</a>
+					<p>cw不宜洗车，未来24小时内有雨，如果在此期间洗车，雨水和路上的泥水可能会再次弄脏您的爱车。</p>
+				</div>
+				<div id="trav" data-role="popup" data-position-to="window" class="ui-content">
+					<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">关闭</a>
+					<p>trav温度适宜的一天，风力不大，但有较强降水，会给您的出行产生很多麻烦，建议您最好还是多选择在室内活动吧！</p>
+				</div>
+				<div id="flu" data-role="popup" data-position-to="window" class="ui-content">
+					<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">关闭</a>
+					<p>flu相对于今天将会出现大幅度降温，空气湿度较大，易发生感冒，请注意适当增加衣服。</p>
+				</div>
+				<div id="sport" data-role="popup" data-position-to="window" class="ui-content">
+					<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">关闭</a>
+					<p>sport有较强降水，建议您选择在室内进行健身休闲运动。</p>
+				</div>
+			</div>
+
+		</article>
+		<footer data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#page2">7天预报</a></li>
+					<li><a href="#page3">降水预报</a></li>
+				</ul>
+			</div>
+		</footer>
+	</section>
+
+
+
+
+	<!-- 页面二 -->
+	<section data-role="page" id="page2">
+		<header data-role="header" data-position="fixed">
+			<a href="#" class="ui-btn ui-icon-carat-l ui-btn-icon-notext ui-shadow ui-corner-all" data-rel="back">返回</a>
+			<h1>7天预报</h1>
+		</header>
+		<article role="main" class="ui-content">
+			<div data-role="collapsible" data-mini="true" data-collapsed="false" data-collapsed-icon=none data-expanded-icon=none class="ui-nodisc-icon">
+				<h1>
+					<div class="collap-title">
+						<div class="collap-title-left">今天</div>
+						<div class="collap-title-mid">
+							<img class="pic_ds" src="http://files.heweather.com/cond_icon/301.png">
+							<img class="pic_ns" src="http://files.heweather.com/cond_icon/301.png">
+						</div>
+						<div class="collap-title-right"><span>17℃/14℃</span></div>
+					</div>
+				</h1>
+				<div class="collap-content">
+					<div class="collap-content-left">
+						<p>白天</p>
+						<p><img class="pic_d" src="http://files.heweather.com/cond_icon/301.png"><span class="left">大雨</span></p>
+						<p class="sunrise">日出&nbsp;&nbsp;&nbsp;&nbsp;06:06</p>
+					</div>
+					<div class="collap-content-right">
+						<p>夜晚</p>
+						<p><img class="pic_n" src="http://files.heweather.com/cond_icon/301.png"><span class="right">大雨</span></p>
+						<p class="sundown">日落&nbsp;&nbsp;&nbsp;&nbsp;06:06</p>
+					</div>
+					<p class="collap-content-bottom">东南风&nbsp;&nbsp;&nbsp;&nbsp;四级</p>
+				</div>
+			</div>
+			<div data-role="collapsible" data-mini="true" data-collapsed-icon=none data-expanded-icon=none class="ui-nodisc-icon">
+				<h1>
+					<div class="collap-title">
+						<div class="collap-title-left">明天</div>
+						<div class="collap-title-mid">
+							<img class="pic_ds" src="http://files.heweather.com/cond_icon/301.png">
+							<img class="pic_ns" src="http://files.heweather.com/cond_icon/301.png">
+						</div>
+						<div class="collap-title-right"><span>17℃/14℃</span></div>
+					</div>
+				</h1>
+				<div class="collap-content">
+					<div class="collap-content-left">
+						<p>白天</p>
+						<p><img class="pic_d" src="http://files.heweather.com/cond_icon/301.png"><span class="left">大雨</span></p>
+						<p class="sunrise">日出&nbsp;&nbsp;&nbsp;&nbsp;06:06</p>
+					</div>
+					<div class="collap-content-right">
+						<p>夜晚</p>
+						<p><img class="pic_n" src="http://files.heweather.com/cond_icon/301.png"><span class="right">大雨</span></p>
+						<p class="sundown">日落&nbsp;&nbsp;&nbsp;&nbsp;06:06</p>
+					</div>
+					<p class="collap-content-bottom">东南风&nbsp;&nbsp;&nbsp;&nbsp;四级</p>
+				</div>
+			</div>
+			<div data-role="collapsible" data-mini="true" data-collapsed-icon=none data-expanded-icon=none class="ui-nodisc-icon">
+				<h1>
+					<div class="collap-title">
+						<div class="collap-title-left">今天</div>
+						<div class="collap-title-mid">
+							<img class="pic_ds" src="http://files.heweather.com/cond_icon/301.png">
+							<img class="pic_ns" src="http://files.heweather.com/cond_icon/301.png">
+						</div>
+						<div class="collap-title-right"><span>17℃/14℃</span></div>
+					</div>
+				</h1>
+				<div class="collap-content">
+					<div class="collap-content-left">
+						<p>白天</p>
+						<p><img class="pic_d" src="http://files.heweather.com/cond_icon/301.png"><span class="left">大雨</span></p>
+						<p class="sunrise">日出&nbsp;&nbsp;&nbsp;&nbsp;06:06</p>
+					</div>
+					<div class="collap-content-right">
+						<p>夜晚</p>
+						<p><img class="pic_n" src="http://files.heweather.com/cond_icon/301.png"><span class="right">大雨</span></p>
+						<p class="sundown">日落&nbsp;&nbsp;&nbsp;&nbsp;06:06</p>
+					</div>
+					<p class="collap-content-bottom">东南风&nbsp;&nbsp;&nbsp;&nbsp;四级</p>
+				</div>
+			</div>
+			<div data-role="collapsible" data-mini="true" data-collapsed-icon=none data-expanded-icon=none class="ui-nodisc-icon">
+				<h1>
+					<div class="collap-title">
+						<div class="collap-title-left">今天</div>
+						<div class="collap-title-mid">
+							<img class="pic_ds" src="http://files.heweather.com/cond_icon/301.png">
+							<img class="pic_ns" src="http://files.heweather.com/cond_icon/301.png">
+						</div>
+						<div class="collap-title-right"><span>17℃/14℃</span></div>
+					</div>
+				</h1>
+				<div class="collap-content">
+					<div class="collap-content-left">
+						<p>白天</p>
+						<p><img class="pic_d" src="http://files.heweather.com/cond_icon/301.png"><span class="left">大雨</span></p>
+						<p class="sunrise">日出&nbsp;&nbsp;&nbsp;&nbsp;06:06</p>
+					</div>
+					<div class="collap-content-right">
+						<p>夜晚</p>
+						<p><img class="pic_n" src="http://files.heweather.com/cond_icon/301.png"><span class="right">大雨</span></p>
+						<p class="sundown">日落&nbsp;&nbsp;&nbsp;&nbsp;06:06</p>
+					</div>
+					<p class="collap-content-bottom">东南风&nbsp;&nbsp;&nbsp;&nbsp;四级</p>
+				</div>
+			</div>
+			<div data-role="collapsible" data-mini="true" data-collapsed-icon=none data-expanded-icon=none class="ui-nodisc-icon">
+				<h1>
+					<div class="collap-title">
+						<div class="collap-title-left">今天</div>
+						<div class="collap-title-mid">
+							<img class="pic_ds" src="http://files.heweather.com/cond_icon/301.png">
+							<img class="pic_ns" src="http://files.heweather.com/cond_icon/301.png">
+						</div>
+						<div class="collap-title-right"><span>17℃/14℃</span></div>
+					</div>
+				</h1>
+				<div class="collap-content">
+					<div class="collap-content-left">
+						<p>白天</p>
+						<p><img class="pic_d" src="http://files.heweather.com/cond_icon/301.png"><span class="left">大雨</span></p>
+						<p class="sunrise">日出&nbsp;&nbsp;&nbsp;&nbsp;06:06</p>
+					</div>
+					<div class="collap-content-right">
+						<p>夜晚</p>
+						<p><img class="pic_n" src="http://files.heweather.com/cond_icon/301.png"><span class="right">大雨</span></p>
+						<p class="sundown">日落&nbsp;&nbsp;&nbsp;&nbsp;06:06</p>
+					</div>
+					<p class="collap-content-bottom">东南风&nbsp;&nbsp;&nbsp;&nbsp;四级</p>
+				</div>
+			</div>
+			<div data-role="collapsible" data-mini="true" data-collapsed-icon=none data-expanded-icon=none class="ui-nodisc-icon">
+				<h1>
+					<div class="collap-title">
+						<div class="collap-title-left">今天</div>
+						<div class="collap-title-mid">
+							<img class="pic_ds" src="http://files.heweather.com/cond_icon/301.png">
+							<img class="pic_ns" src="http://files.heweather.com/cond_icon/301.png">
+						</div>
+						<div class="collap-title-right"><span>17℃/14℃</span></div>
+					</div>
+				</h1>
+				<div class="collap-content">
+					<div class="collap-content-left">
+						<p>白天</p>
+						<p><img class="pic_d" src="http://files.heweather.com/cond_icon/301.png"><span class="left">大雨</span></p>
+						<p class="sunrise">日出&nbsp;&nbsp;&nbsp;&nbsp;06:06</p>
+					</div>
+					<div class="collap-content-right">
+						<p>夜晚</p>
+						<p><img class="pic_n" src="http://files.heweather.com/cond_icon/301.png"><span class="right">大雨</span></p>
+						<p class="sundown">日落&nbsp;&nbsp;&nbsp;&nbsp;06:06</p>
+					</div>
+					<p class="collap-content-bottom">东南风&nbsp;&nbsp;&nbsp;&nbsp;四级</p>
+				</div>
+			</div>
+			<div data-role="collapsible" data-mini="true" data-collapsed-icon=none data-expanded-icon=none class="ui-nodisc-icon">
+				<h1>
+					<div class="collap-title">
+						<div class="collap-title-left">今天</div>
+						<div class="collap-title-mid">
+							<img class="pic_ds" src="http://files.heweather.com/cond_icon/301.png">
+							<img class="pic_ns" src="http://files.heweather.com/cond_icon/301.png">
+						</div>
+						<div class="collap-title-right"><span>17℃/14℃</span></div>
+					</div>
+				</h1>
+				<div class="collap-content">
+					<div class="collap-content-left">
+						<p>白天</p>
+						<p><img class="pic_d" src="http://files.heweather.com/cond_icon/301.png"><span class="left">大雨</span></p>
+						<p class="sunrise">日出&nbsp;&nbsp;&nbsp;&nbsp;06:06</p>
+					</div>
+					<div class="collap-content-right">
+						<p>夜晚</p>
+						<p><img class="pic_n" src="http://files.heweather.com/cond_icon/301.png"><span class="right">大雨</span></p>
+						<p class="sundown">日落&nbsp;&nbsp;&nbsp;&nbsp;06:06</p>
+					</div>
+					<p class="collap-content-bottom">东南风&nbsp;&nbsp;&nbsp;&nbsp;四级</p>
+				</div>
+			</div>
+		</article>
+		<footer data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#page1">乐活天气</a></li>
+					<li><a href="#page3">降水预报</a></li>
+				</ul>
+			</div>
+		</footer>
+	</section>
+
+
+
+
+
+	<!-- 页面三 -->
+	<section data-role="page" id="page3">
+		<header data-role="header" data-position="fixed">
+			<a href="#" class="ui-btn ui-icon-carat-l ui-btn-icon-notext ui-shadow ui-corner-all" data-rel="back">返回</a>
+			<h1>降水预报</h1>
+		</header>
+		<article role="main" class="ui-content">
+		</article>
+		<footer data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#page1">乐活天气</a></li>
+					<li><a href="#page2">7天预报</a></li>
+				</ul>
+			</div>
+		</footer>
+	</section>
+
+
+
+
+</body>
+</html>

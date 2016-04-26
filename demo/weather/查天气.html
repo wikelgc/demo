@@ -1,0 +1,108 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<title>中国天气网-专业天气预报、气象服务门户</title>
+<meta  name="keywords" content="天气预报,天气,天气预报查询一周,天气预报15天查询,天气预报查询,北京天气,天气在线,气候,气象,手机天气,wap天气" />
+<meta name="description" content="中国天气网官方权威发布天气预报,逐三小时天气预报,提供天气预报查询一周,天气预报15天查询,空气质量,生活指数,旅游出行,交通天气等查询服务" />
+	<script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript">
+//     $(document).ready(function(){
+//		if(navigator.geolocation){
+//			navigator.geolocation.getCurrentPosition(function(position){
+//				var lat = position.coords.latitude;
+//				var lon = position.coords.longitude;console.log(lat,lon);
+//				alert(lat);
+//			});
+//		}
+//
+//     });
+
+
+     </script>
+</head>
+<body class="loadingBody">
+
+<script>
+//	function get_location() {
+//		if(navigator.geolocation) {
+//			navigator.geolocation.getCurrentPosition(function(position){
+//				// 显示地理信息
+//				var longitude = position.coords.longitude,
+//						latitude = position.coords.latitude;
+//				showObject(position.coords,0);
+//			},function(err){
+//				// 错误处理
+//				switch(err.code) {
+//					case 1:
+//						alert("位置服务被拒绝。");
+//						break;
+//
+//					case 2:
+//						alert("暂时获取不到位置信息。");
+//						break;
+//
+//					case 3:
+//						alert("获取信息超时。");
+//						break;
+//
+//					default:
+//						alert("未知错误。");
+//						break;
+//				}
+//			},{
+//				enableHighAccuracy: true,
+//				maximumAge: 100,
+//				accuracy:100
+//			})
+//		}else {
+//			alert("你的浏览器不支持使用HTML5来获取地理位置信息");
+//		}
+//	}
+//	function showObject(obj,k) {
+//		// 递归显示obj
+//		if(!obj) {return;}
+//		for(var i in obj) {
+//			if(typeof(obj[i] != "object") || obj[i] == null) {
+//				for(var j = 0; j < k; j++) {
+//					document.write("&nbsp;&nbsp;&nbsp;&nbsp;")
+//				}
+//				document.write(i + " : " + obj[i] + "<br/>");
+//			}else {
+//				document.write(i + " : "+"<br/>");
+//				showObject(obj[i],k+1);
+//			}
+//		}
+//	}
+//	get_location();
+
+//jQuery(function($){
+//	//获取IP地址
+//	var Ip = "";
+//	var url = 'http://chaxun.1616.net/s.php?type=ip&output=json&callback=?&_='+Math.random();
+//	$.getJSON(url, function(data){
+//		Ip = data.Ip;
+//		alert(Ip);
+//		getloaction(Ip);
+//	});
+//
+//	//根据IP获取地理位置
+//});
+$(function(){
+	getloaction();
+});
+	function getloaction(Ip){
+		http://apis.haoservice.com/weather/ip?ip=202.108.250.241&key=50c252b58e6a04a7b13627cd4ec92da8
+		var url = "http://apis.haoservice.com/weather/ip?";
+		var _url = url+"ip=202.108.250.241&key=50c252b58e6a04a7b13627cd4ec92da8";
+		alert(_url);
+		$.getJSON(_url,function(data){
+			alert(data.reason);
+		});
+	}
+
+</script>
+</body>
+</html>
