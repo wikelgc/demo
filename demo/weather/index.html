@@ -21,47 +21,56 @@
 			<ul class="selectDownLocation">
 				<li><a href="#">武汉</a></li>
 				<li><a href="#">深圳</a></li>
-			</ul>			<h1>武汉查询</h1>
+			</ul>			<h1>本地天气</h1>
 			<a href="#" class="ui-btn ui-icon-carat-d ui-btn-icon-notext ui-shadow ui-corner-all select">下拉</a>
 				<ul class="selectDown">
 					<li><a href="#page2">7天预报</a></li>
-					<li><a href="#page3">降水预报</a></li>
+					<li><a href="#page3">天气查询</a></li>
 				</ul>
 		</header>
+
 		<article role="main" class="ui-content page1_main">
-			<div class="refresh">
-				<img src="images/refresh.png" width="20px" height="20px">
-				<p>10:05更新</p>
+
+			<div class="content-wrap">
+				<div class="header">
+					<div class="refresh">
+						<img src="images/refresh.png" width="20px" height="20px">
+						<p>10:05更新</p>
+					</div>
+					<div class="page1_pos">
+						<span>武汉</span>
+					</div>
+				</div>
+
+				<div class="content">
+					<div class="aqi">
+						<p><span class="aqi_l left">26</span><span class="aqi_r right">优</span></p>
+						<p><span class="left">PM2.5</span><span class="pm25_r right">16</span></p>
+					</div>
+					<div class="basic">
+						<p><span class="tmp left">14℃</span><span class="basic_txt right">阵雨</span></p>
+						<p><span class="basic_max left">15℃</span><span class="basic_min right">12℃</span></p>
+						<p><span class="left">湿度</span><span class="basic_hum right">100%</span></p>
+						<p><span class="basic_dir left">东南风</span><span class="basic_sc right">四级</span></p>
+						<p><span class="basic_sr left">日出06：05</span><span class="basic_ss right">日落18:45</span></p>
+					</div>
+				</div>
+
 			</div>
-			<div class="page1_pos">
-				<span>武汉</span>
-			</div>
-			<div class="aqi">
-				<p><span class="aqi_l">26</span><span class="aqi_r">&nbsp;&nbsp;&nbsp;&nbsp;优</span></p>
-				<p><span>PM2.5</span><span class="pm25_r">&nbsp;&nbsp;&nbsp;&nbsp;16</span></p>
-			</div>
-			<div class="basic">
-				<p><span class="tmp">14℃</span><span class="basic_txt">阵雨</span></p>
-				<p><span class="basic_max">15℃</span><span class="basic_min">&nbsp;&nbsp;&nbsp;&nbsp;12℃</span></p>
-				<p><span>湿度</span><span class="basic_hum">&nbsp;&nbsp;&nbsp;&nbsp;100%</span></p>
-				<p><span class="basic_dir">东南风</span><span class="basic_sc">&nbsp;&nbsp;&nbsp;&nbsp;四级</span></p>
-				<p><span class="basic_sr">日出06：05</span><span class="basic_ss">&nbsp;&nbsp;&nbsp;&nbsp;日落18:45</span></p>
-			</div>
-			
-			<p class="table_top">未来趋势</p>
 			<div class="table_wrap">
+				<h4 class="table_top" >未来趋势</h4>
 				<table>
 					<tr>
 						<td>现在</td>
 						<td>13:00</td>
-						<td>现在</td>
-						<td>13:00</td>
-						<td>现在</td>
-						<td>13:00</td>
-						<td>现在</td>
-						<td>13:00</td>
-						<td>现在</td>
-						<td>13:00</td>
+						<td>14:00</td>
+						<td>15:00</td>
+						<td>16:00</td>
+						<td>17:00</td>
+						<td>18:00</td>
+						<td>19:00</td>
+						<td>20:00</td>
+						<td>21:00</td>
 					</tr>
 					<tr>
 						<td>14℃</td>
@@ -101,8 +110,9 @@
 					</tr>
 				</table>
 			</div>
+			</group>
 			<div class="suggest">
-				<ul data-role="listview" data-inset="true">    
+				<ul data-role="listview" data-inset="true">
 					<li><a class="comf" href="#comf" data-rel="popup"><span></span>生活指数</a></li>
 					<li><a class="drsg" href="#drsg" data-rel="popup"><span></span>穿衣指数</a></li>
 					<li><a class="uv" href="#uv" data-rel="popup"><span></span>紫外线指数</a></li>
@@ -146,14 +156,11 @@
 			<div data-role="navbar">
 				<ul>
 					<li><a href="#page2">7天预报</a></li>
-					<li><a href="#page3">降水预报</a></li>
+					<li><a href="#page3">天气查询</a></li>
 				</ul>
 			</div>
 		</footer>
 	</section>
-
-
-
 
 	<!-- 页面二 -->
 	<section data-role="page" id="page2">
@@ -341,37 +348,45 @@
 		<footer data-role="footer" data-position="fixed">
 			<div data-role="navbar">
 				<ul>
-					<li><a href="#page1">乐活天气</a></li>
-					<li><a href="#page3">降水预报</a></li>
+					<li><a href="#page1">本地天气</a></li>
+					<li><a href="#page3">天气查询</a></li>
 				</ul>
 			</div>
 		</footer>
 	</section>
-
-
-
-
 
 	<!-- 页面三 -->
 	<section data-role="page" id="page3">
 		<header data-role="header" data-position="fixed">
 			<a href="#" class="ui-btn ui-icon-carat-l ui-btn-icon-notext ui-shadow ui-corner-all" data-rel="back">返回</a>
-			<h1>降水预报</h1>
+			<h1>天气查询</h1>
 		</header>
-		<article role="main" class="ui-content">
-		</article>
+			<article role="main" class="ui-content">
+				<div class="ui-field-contain">
+					<labeli for="search-city">城市查询</labeli>
+					<input type="text" name="text-basic" id="search-city" value="武汉">
+				</div>
+				<div class="ui-field-contain">
+					<label for="search-ip">IP地址查询</label>
+					<input type="text" name="text-basic" id="search-ip" value="">
+				</div>
+				<input type="button" value="搜索" id="search-submit">
+				<ul data-role="listview" data-inset="true" id="list">
+					<li><h1>热门城市</h1></li>
+					<li><a>北京</a></li>
+					<li><a>上海</a></li>
+					<li><a>广州</a></li>
+					<li><a>深圳</a></li>
+				</ul>
+			</article>
 		<footer data-role="footer" data-position="fixed">
 			<div data-role="navbar">
 				<ul>
-					<li><a href="#page1">乐活天气</a></li>
+					<li><a href="#page1">本地天气</a></li>
 					<li><a href="#page2">7天预报</a></li>
 				</ul>
 			</div>
 		</footer>
 	</section>
-
-
-
-
 </body>
 </html>

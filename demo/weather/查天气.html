@@ -78,30 +78,30 @@
 //	}
 //	get_location();
 
-//jQuery(function($){
-//	//获取IP地址
-//	var Ip = "";
-//	var url = 'http://chaxun.1616.net/s.php?type=ip&output=json&callback=?&_='+Math.random();
-//	$.getJSON(url, function(data){
-//		Ip = data.Ip;
-//		alert(Ip);
-//		getloaction(Ip);
-//	});
-//
-//	//根据IP获取地理位置
-//});
-$(function(){
-	getloaction();
+jQuery(function($){
+	//获取IP地址
+	var Ip = "";
+	var url = 'http://chaxun.1616.net/s.php?type=ip&output=json&callback=?&_='+Math.random();
+	$.getJSON(url, function(data){
+		Ip = data.Ip;
+		alert(Ip);
+		getloaction(Ip);
+	});
 });
-	function getloaction(Ip){
-		http://apis.haoservice.com/weather/ip?ip=202.108.250.241&key=50c252b58e6a04a7b13627cd4ec92da8
-		var url = "http://apis.haoservice.com/weather/ip?";
-		var _url = url+"ip=202.108.250.241&key=50c252b58e6a04a7b13627cd4ec92da8";
-		alert(_url);
-		$.getJSON(_url,function(data){
-			alert(data.reason);
-		});
-	}
+
+//
+//$(function(){
+//	getloaction();
+//});
+//	function getloaction(Ip){
+//		http://apis.haoservice.com/weather/ip?ip=202.108.250.241&key=50c252b58e6a04a7b13627cd4ec92da8
+//		var url = "http://apis.haoservice.com/weather/ip?";
+//		var _url = url+"ip=202.108.250.241&key=50c252b58e6a04a7b13627cd4ec92da8";
+//		alert(_url);
+//		$.getJSON(_url,function(data){
+//			alert(data.reason);
+//		});
+//	}
 
 </script>
 </body>

@@ -5,15 +5,31 @@
 #page1 .selectDownLocation a { text-decoration: none; color: #fff; font-size: 12.5px; display: inline-block; padding: 10px; font-weight: normal; font-family: "微软雅黑"; }
 
 
-.page1_main { position: relative; }
-.refresh { position: absolute; top: 10px; right: 15px; font-size: 10px; text-align: center; }
-.refresh p { margin: 0; }
-.page1_pos { text-align: center; margin-bottom: 20px; }
-.aqi { margin-bottom: 50px; }
-.basic .tmp { font-size: 40px; margin: 20px 10px 10px; display: inline-block; }
-.table_wrap { overflow: auto; }
-.table_top { margin:0 0 5px 0; border-bottom: 1px solid blue; }
-table { width: 100%; padding: 0 10px; border: 1px solid red; }
+.page1_main { position: relative;}
+.content-wrap{margin-bottom: 15px;border: 2px solid #CCC;border-radius: 5px;background-color: white;position: relative;}
+.content-wrap .header{background-color: #ccc;
+    padding: 5px;}
+.refresh { position: absolute; right: 15px;}
+.refresh p { margin: 0;display: inline-block;  font-size: 10px; text-align: center;
+    position: relative;bottom:5px;}
+.page1_pos { text-align: center;  }
+.content-wrap .content{
+    padding: 10px;
+}
+.content .left{
+    width:80px;
+    margin: 0px;
+    display: inline-block;
+}
+.content .right{
+    margin-left:15%;display:inline-block ;text-align: left;
+}
+
+
+.table_wrap { overflow: auto;border: 2px solid #CCC;border-radius: 5px;background-color: #eee;}
+.table_wrap p{width: 100%;}
+.table_top { margin:5px 5px 5px 15px;}
+table { width: 100%; padding: 0 10px;background-color:white}
 td { width: 1px; white-space: nowrap; word-break: keep-all; padding: 5px; text-align: center; }
 .suggest { font-weight: normal; }
 .suggest span { float: right; }
@@ -30,3 +46,8 @@ td { width: 1px; white-space: nowrap; word-break: keep-all; padding: 5px; text-a
 .collap-content-left { float: left; text-align: left; }
 .collap-content-right { float: right; text-align: right; }
 .collap-content-bottom { clear: both; }
+
+#list a{
+    text-decoration:none;
+    text-align: center;
+}
