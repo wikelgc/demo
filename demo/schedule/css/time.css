@@ -5,11 +5,32 @@
 #page1 .selectDownLocation a { text-decoration: none; color: #fff; font-size: 12.5px; display: inline-block; padding: 10px; font-weight: normal; font-family: "微软雅黑"; }
 
 
-/*//页面一 */
-/*.page-table{*/
-/*border: 2px solid #ccc;*/
-/*border-radius: 5px;*/
-/*}*/
+/*页面一 */
+/*section one*/
+
+#dateMessage .current-time{
+    font-size: 48px;
+}
+
+#dateMessage img{
+    width:50px;
+}
+
+
+
+/*section two*/
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #course-table{
@@ -19,8 +40,6 @@
 
 #course-table tbody{
     text-align: center;
-    /*border: 1px solid #CCC;*/
-    /*padding: 5px;*/
 }
 
 #course-table th{
@@ -177,18 +196,10 @@ td { width: 1px; white-space: nowrap; word-break: keep-all; padding: 5px; text-a
 .suggest { font-weight: normal; }
 .suggest span { float: right; }
 
-/* 页面二 */
-/* div[data-role="collapsible"] { border: 1px solid red; } */
-/*.collap-title { position: relative; margin-left: -25px; }*/
-/*.collap-title-left { width: 20%; position: absolute; left: 0; top: 30%; }*/
-/*.collap-title-mid { margin: 0 20%; text-align:center; }*/
-/*.collap-title-mid img { width: 30px; height: 30px; }*/
-/*.collap-title-right { width: 20%; position: absolute; right: 0; top: 30%; }*/
-/*.collap-content { overflow: auto; }*/
-/*.collap-content img { vertical-align: middle; width:60px; height:60px; }*/
-/*.collap-content-left { float: left; text-align: left; }*/
-/*.collap-content-right { float: right; text-align: right; }*/
-/*.collap-content-bottom { clear: both; }*/
+
+
+
+/*page2*/
 .collap-title{
     background-color: #FF0;
 
@@ -203,3 +214,10 @@ td { width: 1px; white-space: nowrap; word-break: keep-all; padding: 5px; text-a
     text-decoration:none;
     text-align: center;
 }
+
+
+/*page3*/
+
+/*page4*/
+
+/*page5*/
