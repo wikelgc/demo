@@ -14,10 +14,6 @@ $(document).on("pagebeforeshow", "#page1", function(){
 		return false;
 	});
 
-	//$("#homePage").click=function(){
-	//	window.location.reload();
-	//	timer=0;
-	//};
 
 	$(".location").on("click", function(){
 		$(".selectDownLocation").css("display", "block");
@@ -46,15 +42,27 @@ $(document).on("pagebeforeshow", "#page3", function(){
 		var _url = "https://api.heweather.com/x3/weather?city="+city+"&key=ead00e8e8c2540c9a87af54bb35002cf";
 		getAjax(1,_url);
 	});
+	for(var i=0;i<_city.length;i++){
+		//alert("out:"+i);
+		$("#btn"+_city[i]).bind("click",function(event){
+			//alert("in"+i);
+			var city =_city[i].toLocaleLowerCase();
+			var _url = "https://api.heweather.com/x3/weather?city="+city+"&key=ead00e8e8c2540c9a87af54bb35002cf";
+			//getAjax(1,_url);
+			event.preventDefault();
+
+		})
+	}
+
 
 	$("#btn"+_city[0]).click(function(){
-		//alert(_city[i]);
+		alert("1");
 		var city =_city[0].toLocaleLowerCase();
 		var _url = "https://api.heweather.com/x3/weather?city="+city+"&key=ead00e8e8c2540c9a87af54bb35002cf";
 		getAjax(1,_url);
 	})
 	$("#btn"+_city[1]).click(function(){
-		//alert(_city[i]);
+		alert("2");
 		var city =_city[1].toLocaleLowerCase();
 		var _url = "https://api.heweather.com/x3/weather?city="+city+"&key=ead00e8e8c2540c9a87af54bb35002cf";
 		getAjax(1,_url);
@@ -109,6 +117,8 @@ function getLocation(number){
 
 function getAjax(number,cityUrl){
 	var oAjax;
+
+	//功能识别
 	if (window.XMLHttpRequest) {
 		 oAjax=new XMLHttpRequest;
 	}
@@ -150,20 +160,21 @@ function getAjax(number,cityUrl){
 
 
 function showOneDetail() {
-	$(".refresh p").html(_strCity["HeWeather data service 3.0"][0]["basic"]["update"]["loc"].substring(11) + '更新');
+	var _objCity = _strCity["HeWeather data service 3.0"];
+	$(".refresh p").html(_strCity["HeWeather data service 3.0"][0]["basic"]["update"]["loc"].substring(11) + '刷新');
 	$(".page1_pos span").html(_strCity["HeWeather data service 3.0"][0]["basic"]["city"]);
 	$(".aqi .aqi_l").html(_strCity["HeWeather data service 3.0"][0]["aqi"]["city"]["aqi"]);
-	$(".aqi .aqi_r").html('&nbsp;&nbsp;&nbsp;&nbsp;' + _strCity["HeWeather data service 3.0"][0]["aqi"]["city"]["qlty"]);
-	$(".aqi .pm25_r").html('&nbsp;&nbsp;&nbsp;&nbsp;' + _strCity["HeWeather data service 3.0"][0]["aqi"]["city"]["pm25"]);
+	$(".aqi .aqi_r").html(_strCity["HeWeather data service 3.0"][0]["aqi"]["city"]["qlty"]);
+	$(".aqi .pm25_r").html(_strCity["HeWeather data service 3.0"][0]["aqi"]["city"]["pm25"]);
 	$(".basic .tmp").html(_strCity["HeWeather data service 3.0"][0]["now"]["tmp"] + '℃');
 	$(".basic .basic_txt").html(_strCity["HeWeather data service 3.0"][0]["now"]["cond"]["txt"]);
 	$(".basic .basic_max").html(_strCity["HeWeather data service 3.0"][0]["daily_forecast"][0]["tmp"]["max"] + '℃');
-	$(".basic .basic_min").html('&nbsp;&nbsp;&nbsp;&nbsp;' + _strCity["HeWeather data service 3.0"][0]["daily_forecast"][0]["tmp"]["min"] + '℃');
-	$(".basic .basic_hum").html('&nbsp;&nbsp;&nbsp;&nbsp;' + _strCity["HeWeather data service 3.0"][0]["now"]["hum"] + '%');
+	$(".basic .basic_min").html(_strCity["HeWeather data service 3.0"][0]["daily_forecast"][0]["tmp"]["min"] + '℃');
+	$(".basic .basic_hum").html(_strCity["HeWeather data service 3.0"][0]["now"]["hum"] + '%');
 	$(".basic .basic_dir").html(_strCity["HeWeather data service 3.0"][0]["now"]["wind"]["dir"]);
-	$(".basic .basic_sc").html('&nbsp;&nbsp;&nbsp;&nbsp;' + _strCity["HeWeather data service 3.0"][0]["now"]["wind"]["sc"] + '级');
+	$(".basic .basic_sc").html(_strCity["HeWeather data service 3.0"][0]["now"]["wind"]["sc"] + '级');
 	$(".basic .basic_sr").html('日出' + _strCity["HeWeather data service 3.0"][0]["daily_forecast"][0]["astro"]["sr"]);
-	$(".basic .basic_ss").html('&nbsp;&nbsp;&nbsp;&nbsp;' + '日落' + _strCity["HeWeather data service 3.0"][0]["daily_forecast"][0]["astro"]["ss"]);
+	$(".basic .basic_ss").html('日落' + _strCity["HeWeather data service 3.0"][0]["daily_forecast"][0]["astro"]["ss"]);
 	$(".comf span").html(_strCity["HeWeather data service 3.0"][0]["suggestion"]["comf"]["brf"]);
 	$(".drsg span").html(_strCity["HeWeather data service 3.0"][0]["suggestion"]["drsg"]["brf"]);
 	$(".uv span").html(_strCity["HeWeather data service 3.0"][0]["suggestion"]["uv"]["brf"]);

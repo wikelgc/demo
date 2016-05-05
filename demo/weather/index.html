@@ -4,11 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=divice-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css">
-	<script type="text/javascript" src="js/jquery-1.12.2.min.js"></script>
-	<script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
-
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<script type="text/javascript" src="js/weather.js"></script>
 	<title>天气查询</title>
 </head>
 <body>
@@ -24,7 +20,8 @@
 			</ul>			<h4><a id="homePage">本地天气</a></h4>
 			<a href="#" class="ui-btn ui-icon-carat-d ui-btn-icon-notext ui-shadow ui-corner-all select">下拉</a>
 				<ul class="selectDown">
-					<li><a href="#page2">7天预报</a></li>
+					<li><a href="#page1">本地天气</a></li>
+					<li><a href="#page2">七天预报</a></li>
 					<li><a href="#page3">天气查询</a></li>
 				</ul>
 		</header>
@@ -155,8 +152,9 @@
 		<footer data-role="footer" data-position="fixed">
 			<div data-role="navbar">
 				<ul>
-					<li><a href="#page2">7天预报</a></li>
-					<li><a href="#page3">天气查询</a></li>
+					<li><a href="#page1">本地</a></li>
+					<li><a href="#page2">预报</a></li>
+					<li><a href="#page3">查询</a></li>
 				</ul>
 			</div>
 		</footer>
@@ -184,14 +182,14 @@
 					<div class="collap-content-left">
 						<p>白天</p>
 						<p><img class="pic_d" src="http://files.heweather.com/cond_icon/301.png"><span class="left">大雨</span></p>
-						<p class="sunrise">日出&nbsp;&nbsp;&nbsp;&nbsp;06:06</p>
+						<p class="sunrise">日出 06:06</p>
 					</div>
 					<div class="collap-content-right">
 						<p>夜晚</p>
 						<p><img class="pic_n" src="http://files.heweather.com/cond_icon/301.png"><span class="right">大雨</span></p>
-						<p class="sundown">日落&nbsp;&nbsp;&nbsp;&nbsp;06:06</p>
+						<p class="sundown">日落 06:06</p>
 					</div>
-					<p class="collap-content-bottom">东南风&nbsp;&nbsp;&nbsp;&nbsp;四级</p>
+					<p class="collap-content-bottom">东南风 四级</p>
 				</div>
 			</div>
 			<div data-role="collapsible" data-mini="true" data-collapsed-icon=none data-expanded-icon=none class="ui-nodisc-icon">
@@ -348,8 +346,9 @@
 		<footer data-role="footer" data-position="fixed">
 			<div data-role="navbar">
 				<ul>
-					<li><a href="#page1">本地天气</a></li>
-					<li><a href="#page3">天气查询</a></li>
+					<li><a href="#page1">本地</a></li>
+					<li><a href="#page2">预报</a></li>
+					<li><a href="#page3">查询</a></li>
 				</ul>
 			</div>
 		</footer>
@@ -361,35 +360,38 @@
 			<a href="#" class="ui-btn ui-icon-carat-l ui-btn-icon-notext ui-shadow ui-corner-all" data-rel="back">返回</a>
 			<h1>天气查询</h1>
 		</header>
-			<article role="main" class="ui-content">
-				<div class="ui-field-contain">
-					<label for="search-city">城市查询</label>
-					<input href="#page1" type="text" name="text-basic" id="search-city" value="武汉">
-				</div>
-				<div class="ui-field-contain">
-					<label for="search-ip">IP地址查询</label>
-					<input type="text" name="text-basic" id="search-ip" value="">
-				</div>
-				<a href="#page1"><input type="button" value="搜索" id="search-submit"></a>
-				<ul data-role="listview" data-inset="true" id="list">
-					<li><h1>热门城市</h1></li>
-					<li><a id="btnBeiJing" href="#page1">北京</a></li>
-					<li><a id="btnShangHai" href="#page1">上海</a></li>
-					<li><a id="btnGuangZhou" href="#page1">广州</a></li>
-					<li><a id="btnShenZhen" href="#page1">深圳</a></li>
-					<li><a id="btnWuHan" href="#page1">武汉</a></li>
-					<li><a id="btnXiaMen" href="#page1">厦门</a></li>
-				</ul>
-			</article>
-
+		<article role="main" class="ui-content">
+			<div class="ui-field-contain">
+				<label for="search-city">城市查询</label>
+				<input href="#page1" type="text" name="text-basic" id="search-city" value="武汉">
+			</div>
+			<div class="ui-field-contain">
+				<label for="search-ip">IP地址查询</label>
+				<input type="text" name="text-basic" id="search-ip" value="">
+			</div>
+			<a href="#page1"><input type="button" value="搜索" id="search-submit"></a>
+			<ul data-role="listview" data-inset="true" id="list">
+				<li><h1>热门城市</h1></li>
+				<li><a id="btnBeiJing" href="#page1">北京</a></li>
+				<li><a id="btnShangHai" href="#page1">上海</a></li>
+				<li><a id="btnGuangZhou" href="#page1">广州</a></li>
+				<li><a id="btnShenZhen" href="#page1">深圳</a></li>
+				<li><a id="btnWuHan" href="#page1">武汉</a></li>
+				<li><a id="btnXiaMen" href="#page1">厦门</a></li>
+			</ul>
+		</article>
 		<footer data-role="footer" data-position="fixed">
 			<div data-role="navbar">
 				<ul>
-					<li><a href="#page1">本地天气</a></li>
-					<li><a href="#page2">7天预报</a></li>
+					<li><a href="#page1">本地</a></li>
+					<li><a href="#page2">预报</a></li>
+					<li><a href="#page3">查询</a></li>
 				</ul>
 			</div>
 		</footer>
 	</section>
+	<script type="text/javascript" src="js/jquery-1.12.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+	<script type="text/javascript" src="js/weather.js"></script>
 </body>
 </html>

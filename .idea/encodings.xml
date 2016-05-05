@@ -2,6 +2,14 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/demo/gobang/js/script.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo/schedule/css/jquery.mobile-1.4.5.min.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo/schedule/css/time.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo/schedule/js/jquery-1.12.2.min.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo/schedule/js/jquery.mobile-1.4.5.min.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo/schedule/js/schedule.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo/schedule/js/week.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/demo/timeTable/js/data.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo/weather/js/time.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo/weather/js/week.js" charset="UTF-8" />
   </component>
 </project>

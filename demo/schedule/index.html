@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=divice-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" type="text/css" href="css/time.css">
+    <title>教师上课提醒系统</title>
+</head>
+<body>
+
+
+<!-- 页面一 -->
+<section data-role="page" id="page1">
+    <header data-role="header" data-position="fixed">
+        <a href="#" class="ui-btn ui-icon-location ui-btn-icon-notext ui-shadow ui-corner-all location">选择城市</a>
+        <h4><a id="homePage">上课提醒系统</a></h4>
+        <a href="#" class="ui-btn ui-icon-carat-d ui-btn-icon-notext ui-shadow ui-corner-all select">下拉</a>
+    </header>
+    <section role="main" class="ui-content">
+        <div class="main-wrap">
+            <div class="top-wrap">
+                <div class="top-left"><span class="current-time">18:20</span></div>
+                <div class="top-right"><img src="" alt="天气图标"><br>武汉多云</div>
+            </div>
+            <div class="bottom-wrap">
+                <div class="bottom-left"><span class="current-day">4月3日</span></div>
+                <div class="bottom-center"><span class="current-week">星期一</span></div>
+                <div class="bottom-right"><span class="teacher-location"> 26 ℃</span></div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </section>
+
+    <section role="main" class="ui-content" id="firstCourse">
+        <div class="main-wrap">
+            <div class="header-wrap">第一节课</div>
+            <div class="top-wrap">
+                <div class="top-left"><span class="course-subject">微积分</span></div>
+                <div class="top-right">距上课<br><span class="last-time">0:05</span></div>
+            </div>
+            <div class="bottom-wrap">
+                    <div class="bottom-left">上课老师<br><span class="teacher-name">阳阳</span></div>
+                <div class="bottom-center">上课地点<br><span class="teacher-location">4-15</span></div>
+                <div class="bottom-right">上课时间<br><span class="teacher-time">12:45</span></div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </section>
+
+    <section role="main" class="ui-content" id="secondCourse">
+        <div class="main-wrap">
+            <div class="header-wrap">第二节课</div>
+            <div class="top-wrap">
+                <div class="top-left"><span class="course-subject">英语</span></div>
+                <div class="top-right"><br>距上课<br><span class="last-time">1:00</span></div>
+            </div>
+            <div class="bottom-wrap">
+                <div class="bottom-left">上课老师<br><span class="teacher-name">阳阳</span></div>
+                <div class="bottom-center">上课地点<br><span class="teacher-location">4-15</span></div>
+                <div class="bottom-right">上课时间<br><span class="teacher-time">1:45</span></div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#page1">首页</a></li>
+                <li><a href="#page2">课程表</a></li>
+                <li><a href="#page3">我的</a></li>
+            </ul>
+        </div>
+    </footer>
+</section>
+
+<!-- 页面二 -->
+<section data-role="page" id="page2">
+    <header data-role="header" data-position="fixed">
+        <a href="#" class="ui-btn ui-icon-carat-l ui-btn-icon-notext ui-shadow ui-corner-all" data-rel="back">返回</a>
+        <h1>第九周</h1>
+    </header>
+    <section role="main" class="ui-content page2Main" >
+        <div data-role="collapsible" data-mini="true" class="course">
+            <h3><span class="collap-title-left time-weeks">周一</span><span class="collap-title-right time-day-1">4月26日</span></h3>
+            <div>
+                <ul data-role="listview" data-inset="true" >
+                    <li data-role="list-divider">上午(8:30-11:50)</li>
+                    <li><a  class="time-course-am" href="#tip" data-rel="popup">语文</a></li>
+                    <li><a  class="time-course-am"  href="#tip" data-rel="popup">语文</a></li>
+                    <li><a  class="time-course-am"  href="#tip" data-rel="popup">语文</a></li>
+                    <li><a  class="time-course-am"  href="#tip" data-rel="popup">语文</a></li>
+                    <li data-role="list-divider">中午(1:30-4:50)</li>
+                    <li><a  class="time-course-pm"  href="#tip" data-rel="popup">语文</a></li>
+                    <li><a  class="time-course-pm"  href="#tip" data-rel="popup">语文</a></li>
+                    <li><a  class="time-course-pm"  href="#tip" data-rel="popup">语文</a></li>
+                    <li><a  class="time-course-pm"  href="#tip" data-rel="popup">语文</a></li>
+                    <li data-role="list-divider">晚上(6:30-8:30)</li>
+                    <li><a  class="time-course-ng"  href="#tip" data-rel="popup" >语文</a></li>
+                    <li><a  class="time-course-ng"  href="#tip" data-rel="popup">语文</a></li>
+                    <li><a  class="time-course-ng"  href="#tip" data-rel="popup">语文</a></li>
+                    <li><a  class="time-course-ng"  href="#tip" data-rel="popup">语文</a></li>
+                </ul>
+            </div>
+        </div>
+        <div data-role="collapsible" data-mini="true" class="course">
+            <h3><span class="collap-title-left time-weeks">周一</span><span class="collap-title-right time-day-1">4月26日</span></h3>
+            <div>
+                <ul data-role="listview" data-inset="true" >
+                    <li data-role="list-divider">上午(8:30-11:50)</li>
+                    <li><a  class="time-course-am" href="#tip" data-rel="popup">语文</a></li>
+                    <li><a  class="time-course-am"  href="#tip" data-rel="popup">语文</a></li>
+                    <li><a  class="time-course-am"  href="#tip" data-rel="popup">语文</a></li>
+                    <li><a  class="time-course-am"  href="#tip" data-rel="popup">语文</a></li>
+                    <li data-role="list-divider">中午(1:30-4:50)</li>
+                    <li><a  class="time-course-pm"  href="#tip" data-rel="popup">语文</a></li>
+                    <li><a  class="time-course-pm"  href="#tip" data-rel="popup">语文</a></li>
+                    <li><a  class="time-course-pm"  href="#tip" data-rel="popup">语文</a></li>
+                    <li><a  class="time-course-pm"  href="#tip" data-rel="popup">语文</a></li>
+                    <li data-role="list-divider">晚上(6:30-8:30)</li>
+                    <li><a  class="time-course-ng"  href="#tip" data-rel="popup" >语文</a></li>
+                    <li><a  class="time-course-ng"  href="#tip" data-rel="popup">语文</a></li>
+                    <li><a  class="time-course-ng"  href="#tip" data-rel="popup">语文</a></li>
+                    <li><a  class="time-course-ng"  href="#tip" data-rel="popup">语文</a></li>
+                </ul>
+            </div>
+        </div>
+        <div data-role="collapsible" data-mini="true" class="course">
+            <h3><span class="collap-title-left time-weeks">周一</span><span class="collap-title-right time-day-1">4月26日</span></h3>
+            <div>
+                <ul data-role="listview" data-inset="true" >
+                    <li data-role="list-divider">上午(8:30-11:50)</li>
+                    <li><a  class="time-course-am" href="#tip" data-rel="popup">语文</a></li>
+                    <li><a  class="time-course-am"  href="#tip" data-rel="popup">语文</a></li>
+                    <li><a  class="time-course-am"  href="#tip" data-rel="popup">语文</a></li>
+                    <li><a  class="time-course-am"  href="#tip" data-rel="popup">语文</a></li>
+                    <li data-role="list-divider">中午(1:30-4:50)</li>
+                    <li><a  class="time-course-pm"  href="#tip" data-rel="popup">语文</a></li>
+                    <li><a  class="time-course-pm"  href="#tip" data-rel="popup">语文</a></li>
+                    <li><a  class="time-course-pm"  href="#tip" data-rel="popup">语文</a></li>
+                    <li><a  class="time-course-pm"  href="#tip" data-rel="popup">语文</a></li>
+                    <li data-role="list-divider">晚上(6:30-8:30)</li>
+                    <li><a  class="time-course-ng"  href="#tip" data-rel="popup" >语文</a></li>
+                    <li><a  class="time-course-ng"  href="#tip" data-rel="popup">语文</a></li>
+                    <li><a  class="time-course-ng"  href="#tip" data-rel="popup">语文</a></li>
+                    <li><a  class="time-course-ng"  href="#tip" data-rel="popup">语文</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="collapsible" data-mini="true" class="course">
+            <h3><span class="collap-title-left time-weeks">周一</span><span class="collap-title-right time-day-1">4月26日</span></h3>
+            <div>
+                <ul data-role="listview" data-inset="true" >
+                    <li data-role="list-divider">上午(8:30-11:50)</li>
+                    <li><a  class="time-course-am" href="#tip" data-rel="popup">语文</a></li>
+                    <li><a  class="time-course-am"  href="#tip" data-rel="popup">语文</a></li>
+                    <li><a  class="time-course-am"  href="#tip" data-rel="popup">语文</a></li>
+                    <li><a  class="time-course-am"  href="#tip" data-rel="popup">语文</a></li>
+                    <li data-role="list-divider">中午(1:30-4:50)</li>
+                    <li><a  class="time-course-pm"  href="#tip" data-rel="popup">语文</a></li>
+                    <li><a  class="time-course-pm"  href="#tip" data-rel="popup">语文</a></li>
+                    <li><a  class="time-course-pm"  href="#tip" data-rel="popup">语文</a></li>
+                    <li><a  class="time-course-pm"  href="#tip" data-rel="popup">语文</a></li>
+                    <li data-role="list-divider">晚上(6:30-8:30)</li>
+                    <li><a  class="time-course-ng"  href="#tip" data-rel="popup" >语文</a></li>
+                    <li><a  class="time-course-ng"  href="#tip" data-rel="popup">语文</a></li>
+                    <li><a  class="time-course-ng"  href="#tip" data-rel="popup">语文</a></li>
+                    <li><a  class="time-course-ng"  href="#tip" data-rel="popup">语文</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="collapsible" data-mini="true" class="course">
+            <h3><span class="collap-title-left time-weeks">周一</span><span class="collap-title-right time-day-1">4月26日</span></h3>
+            <div>
+                <ul data-role="listview" data-inset="true" >
+                    <li data-role="list-divider">上午(8:30-11:50)</li>
+                    <li><a  class="time-course-am" href="#tip" data-rel="popup">语文</a></li>
+                    <li><a  class="time-course-am"  href="#tip" data-rel="popup">语文</a></li>
+                    <li><a  class="time-course-am"  href="#tip" data-rel="popup">语文</a></li>
+                    <li><a  class="time-course-am"  href="#tip" data-rel="popup">语文</a></li>
+                    <li data-role="list-divider">中午(1:30-4:50)</li>
+                    <li><a  class="time-course-pm"  href="#tip" data-rel="popup">语文</a></li>
+                    <li><a  class="time-course-pm"  href="#tip" data-rel="popup">语文</a></li>
+                    <li><a  class="time-course-pm"  href="#tip" data-rel="popup">语文</a></li>
+                    <li><a  class="time-course-pm"  href="#tip" data-rel="popup">语文</a></li>
+                    <li data-role="list-divider">晚上(6:30-8:30)</li>
+                    <li><a  class="time-course-ng"  href="#tip" data-rel="popup" >语文</a></li>
+                    <li><a  class="time-course-ng"  href="#tip" data-rel="popup">语文</a></li>
+                    <li><a  class="time-course-ng"  href="#tip" data-rel="popup">语文</a></li>
+                    <li><a  class="time-course-ng"  href="#tip" data-rel="popup">语文</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="tip" data-role="popup" data-position-to="window" class="ui-content">
+            <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">关闭</a>
+        </div>
+    </section>
+    <footer data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#page1">首页</a></li>
+                <li><a href="#page2">课程表</a></li>
+                <li><a href="#page3">我的</a></li>
+            </ul>
+        </div>
+    </footer>
+</section>
+
+<!-- 登陆页面 -->
+<section data-role="page" id="page3">
+    <header data-role="header" data-position="fixed">
+        <a href="#" class="ui-btn ui-icon-carat-l ui-btn-icon-notext ui-shadow ui-corner-all" data-rel="back">返回</a>
+        <h1>登录</h1>
+    </header>
+    <article role="main" class="ui-content">
+        <div class="ui-field-contain">
+            <label for="search-city">用户名</label>
+            <input type="text" name="text-basic" id="search-city" placeholder="请输入用户名">
+        </div>
+        <div class="ui-field-contain">
+            <label for="search-ip">密码</label>
+            <input type="text" name="text-basic" id="search-ip" placeholder="请输入密码">
+        </div>
+        <a href="#page1"><input type="button" value="登录" id="search-submit"></a>
+    </article>
+    <footer data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#page1">首页</a></li>
+                <li><a href="#page2">课程表</a></li>
+                <li><a href="#page3">我的</a></li>
+            </ul>
+        </div>
+    </footer>
+</section>
+
+
+
+<section data-role="page" id="page3">
+    <header data-role="header" data-position="fixed">
+        <a href="#" class="ui-btn ui-icon-carat-l ui-btn-icon-notext ui-shadow ui-corner-all" data-rel="back">返回</a>
+        <h1>我的</h1>
+    </header>
+    <article class="ui-content">
+        <div class="ui-field-contain">
+            <ul data-role="listview">
+                <li><a>当前周数</a></li>
+                <li><a>我的资料</a></li>
+                <li><a>消息</a></li>
+                <li><a>收藏</a></li>
+            </ul>
+        </div>
+    </article>
+    <article class="ui-content">
+        <div class="ui-field-contain">
+            <ul data-role="listview">
+                <li><a>帮助与反馈</a></li>
+                <li><a>设置</a></li>
+            </ul>
+        </div>
+    </article>
+    <footer data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#page1">首页</a></li>
+                <li><a href="#page2">课程表</a></li>
+                <li><a href="#page3">我的</a></li>
+            </ul>
+        </div>
+    </footer>
+</section>
+
+
+<!--//设置页面-->
+<!--<section data-role="page" id="page4">-->
+    <!--<header data-role="header" data-position="fixed">-->
+        <!--<a href="#" class="ui-btn ui-icon-carat-l ui-btn-icon-notext ui-shadow ui-corner-all" data-rel="back">返回</a>-->
+        <!--<h1>个人设置</h1>-->
+    <!--</header>-->
+    <!--<article role="main" class="ui-content">-->
+        <!--<div class="ui-field-contain">-->
+            <!--<label for="search-city">设置周数</label>-->
+            <!--<input href="#page1" type="text" name="text-basic" id="search-city" placeholder="请输入用户名">-->
+        <!--</div>-->
+        <!--<a href="#page1"><input type="button" value="提交" id="search-submit"></a>-->
+
+        <!--<div class="ui-field-contain">-->
+            <!--<label for="search-ip">重置密码</label>-->
+            <!--<input type="text" name="text-basic" id="search-ip" placeholder="请输入密码">-->
+        <!--</div>-->
+        <!--<a href="#page1"><input type="button" value="登陆" id="search-submit"></a>-->
+    <!--</article>-->
+    <!--<footer data-role="footer" data-position="fixed">-->
+        <!--<div data-role="navbar">-->
+            <!--<ul>-->
+                <!--<li><a href="#page1">详情</a></li>-->
+                <!--<li><a href="#page2">课程表</a></li>-->
+                <!--<li><a href="#page3">设置</a></li>-->
+            <!--</ul>-->
+        <!--</div>-->
+    <!--</footer>-->
+<!--</section>-->
+<script type="text/javascript" src="js/jquery-1.12.2.min.js"></script>
+
+<script src="js/week.js"></script>
+<script type="text/javascript" src="js/schedule.js"></script>
+<script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+</body>
+</html>
